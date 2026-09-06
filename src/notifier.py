@@ -40,6 +40,25 @@ def send_email(
     to_addrs_raw = os.getenv("MAIL_TO") or user
     to_addrs = [a.strip() for a in to_addrs_raw.split(",") if a.strip()]
 
+    # 防御性清洗：邮箱地址只允许 ASCII，去掉智能引号 / 中文括号 / 全角空格等污染字符
+    def _sanitize_email(value: str, label: str) -> str:
+        if not value:
+            return value
+        original = value
+        cleaned = value.encode("ascii", "ignore").decode("ascii").strip()
+        for pair in [('"', '"'), ('"', '"'), ("'", "'"), ("'", "'")]:
+            if cleaned.startswith(pair[0]) and cleaned.endswith(pair[1]):
+                cleaned = cleaned[1:-1].strip()
+        if cleaned != original:
+            logger.warning(f"{label} 检测到非 ASCII 字符，已清洗：{original!r} -> {cleaned!r}")
+        return cleaned
+
+    host = _sanitize_email(host, "SMTP_HOST")
+    user = _sanitize_email(user, "SMTP_USER")
+    password = _sanitize_email(password, "SMTP_PASSWORD")
+    from_addr = _sanitize_email(from_addr, "MAIL_FROM")
+    to_addrs = [_sanitize_email(a, "MAIL_TO") for a in to_addrs]
+
     missing = [k for k, v in {
         "SMTP_HOST": host, "SMTP_USER": user,
         "SMTP_PASSWORD": password, "MAIL_FROM": from_addr,
