@@ -1,0 +1,75 @@
+name: Daily Papers
+
+on:
+  # 北京时间每天 09:00 = UTC 01:00
+  schedule:
+    - cron: "0 1 * * *"
+  # 允许在 Actions 页面手动触发（带可调参数）
+  workflow_dispatch:
+    inputs:
+      lookback_days:
+        description: "回溯天数"
+        required: false
+        default: "7"
+      top_k:
+        description: "每天推送几条"
+        required: false
+        default: "5"
+
+# 防止并发：上一次没跑完就跳过
+concurrency:
+  group: daily-papers
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run daily pipeline
+        env:
+          # ====== SMTP 邮件配置 ======
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          # ====== 检索参数 ======
+          DAILY_TOPK: ${{ github.event.inputs.top_k || '5' }}
+          LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '7' }}
+          # 可选：换成自己的邮箱，让 OpenAlex 给你更高速率
+          CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
+        run: python main.py
+
+      - name: Upload logs & archive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-papers-${{ github.run_id }}
+          path: |
+            logs/summary.json
+            archive/
+          retention-days: 30
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::error::每日文献推送任务失败，请查看上方日志"
+          echo "本次运行摘要："
+          cat logs/summary.json || echo "summary.json 未生成"

@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Secrets — 千万不要把真实密钥 commit 上去
+.env
+*.env.local
+
+# 日志
+*.log
+logs/
+
+# 本地测试输出
+output/
+test_output/
