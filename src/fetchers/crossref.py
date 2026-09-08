@@ -23,26 +23,21 @@ CROSSREF_BASE = "https://api.crossref.org/works"
 CONTACT_EMAIL = "daily-bot@example.com"
 
 
-def fetch_recent_papers_crossref(
+def _fetch_one_batch(
     issns: List[str],
-    lookback_days: int = 7,
-    rows: int = 20,
-    mailto: Optional[str] = None,
-    query: str = "asynchronous discussion online discussion",
+    from_date_str: str,
+    rows: int,
+    query: str,
+    mailto: str,
+    include_type: bool = True,
 ) -> List[Dict]:
-    """用 Crossref 作为兜底检索。"""
-    mailto = mailto or CONTACT_EMAIL
+    """内部：请求一个 ISSN 批次。"""
+    filter_parts = [f"issn:{','.join(issns)}", f"from-pub-date:{from_date_str}"]
+    if include_type:
+        filter_parts.append("type:journal-article")
 
-    today = datetime.now(timezone.utc).date()
-    from_date = today - timedelta(days=lookback_days)
-
-    # Crossref 用 filter=issn:xxx,yyy + query.bibliographic 做关键词检索
     params = {
-        "filter": (
-            f"issn:{','.join(issns)},"
-            f"from-pub-date:{from_date.isoformat()},"
-            "type:journal-article"
-        ),
+        "filter": ",".join(filter_parts),
         "query.bibliographic": query,
         "sort": "published",
         "order": "desc",
@@ -57,11 +52,61 @@ def fetch_recent_papers_crossref(
         resp = requests.get(url, timeout=30)
         resp.raise_for_status()
         data = resp.json()
+        return data.get("message", {}).get("items", [])
     except requests.RequestException as e:
-        logger.error(f"Crossref 请求失败: {e}")
+        logger.warning(f"Crossref 批次请求失败: {e}")
         return []
 
-    return data.get("message", {}).get("items", [])
+
+def fetch_recent_papers_crossref(
+    issns: List[str],
+    lookback_days: int = 7,
+    rows: int = 20,
+    mailto: Optional[str] = None,
+    query: str = "asynchronous discussion online discussion",
+) -> List[Dict]:
+    """
+    用 Crossref 作为兜底检索。
+
+    策略：
+    1. 先尝试批量请求（效率高）
+    2. 若批量报 400 / 失败，则逐个 ISSN 请求，隔离坏 ISSN
+    3. 合并后按发布日期降序返回
+    """
+    mailto = mailto or CONTACT_EMAIL
+    today = datetime.now(timezone.utc).date()
+    from_date = today - timedelta(days=lookback_days)
+    from_date_str = from_date.isoformat()
+
+    # 1. 批量请求
+    all_items = _fetch_one_batch(issns, from_date_str, rows, query, mailto)
+
+    # 2. 批量失败时，逐个 ISSN 兜底
+    if not all_items:
+        logger.info("Crossref 批量请求无果/失败，尝试逐个 ISSN 请求")
+        for issn in issns:
+            batch = _fetch_one_batch(
+                [issn], from_date_str, max(rows // len(issns), 5), query, mailto,
+                include_type=False  # 中文期刊在 Crossref 里的 type 标签可能不一致，放宽
+            )
+            all_items.extend(batch)
+
+    # 去重 + 排序
+    seen = set()
+    unique = []
+    for item in sorted(
+        all_items,
+        key=lambda x: x.get("published-print", {}).get("date-parts", [[0]])[0][0] or 0,
+        reverse=True,
+    ):
+        doi = item.get("DOI")
+        key = doi or item.get("URL")
+        if key and key not in seen:
+            seen.add(key)
+            unique.append(item)
+
+    logger.info(f"Crossref 最终返回 {len(unique)} 条")
+    return unique[:rows]
 
 
 def normalize_crossref_item(item: Dict) -> Dict:

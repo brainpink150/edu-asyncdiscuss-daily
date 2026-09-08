@@ -7,6 +7,7 @@
 | `src/history.py` | **新增** 推送历史管理 | 跨日重复 |
 | `main.py` | **重写** 中英分路抓取 + 配额 + 历史过滤 | 数量不稳 / 中英比例失配 |
 | `.github/workflows/daily-papers.yml` | **重写** 加 GITHUB_TOKEN 写权限 + 自动 commit 历史 | 历史无法跨运行持久化 |
+| `src/fetchers/crossref.py` | **重写** 防 400 崩溃 + ISSN 分批请求 | 中文 Crossref 兜底失败 |
 | `docs/QUOTA_AND_DEDUP.md` | **新增** 本文档 | — |
 
 ## 三个问题对应的修复
@@ -50,7 +51,22 @@ def _title_fingerprint(title):
   - `ZH_QUOTA=2`
   - `LOOKBACK_DAYS=60`
 
-## 部署步骤
+### 4. 「中文源返回 0，Crossref 兜底报 400」
+
+**根因**：
+- OpenAlex 对国内 CSSCI 期刊收录极少
+- Crossref 批量请求里只要有一个坏 ISSN 或 type 标签不匹配，就整批 400
+- 之前 Crossref 一直用英文关键词搜中文期刊，相关性也差
+
+**修复**：
+- `crossref.py` 批量请求失败后，自动降级为**逐个 ISSN 请求**，隔离坏 ISSN
+- 中文期刊请求时去掉 `type:journal-article` 限制（中文期刊在 Crossref 里的 type 标签不一致）
+- `main.py` 中文路径改用中文关键词：`异步讨论|在线讨论|网络讨论|...`
+- `main.py` 中文若仍不足，启用**更宽关键词 + 2 倍窗口兜底**：
+  - 关键词扩展为：在线学习 / 网络学习 / 远程教育 / 开放教育 / 教育技术 / 信息化教学 / 混合式教学 / 慕课 / MOOC / 学习分析 / 异步交互 / 在线交互
+- 兜底后仍不足 2 篇时，**用高相关外文候选补齐到 5 篇**，日志会写明"中文不足，补 X 篇外文"
+
+
 
 ```bash
 cd ~/Projects/edu-asyncdiscuss-daily

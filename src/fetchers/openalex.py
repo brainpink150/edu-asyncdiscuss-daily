@@ -52,14 +52,19 @@ def fetch_recent_papers(
     lookback_days: int = 7,
     per_page: int = 25,
     mailto: Optional[str] = None,
+    query: Optional[str] = None,
 ) -> List[Dict]:
     """
     在指定期刊集合中，检索最近 lookback_days 天内、
-    标题或摘要含"异步讨论/在线讨论"关键词的文献。
+    标题或摘要含指定关键词的文献。
+
+    Args:
+        query: 覆盖默认 KEYWORDS 的自定义查询；默认用 OpenAlex OR 语法 "a|b|c"。
 
     返回 OpenAlex work 的原始 JSON 列表。
     """
     mailto = mailto or CONTACT_EMAIL
+    search_query = query or build_search_query()
 
     # 计算日期窗口（OpenAlex 用 from_publication_date 过滤）
     today = datetime.now(timezone.utc).date()
@@ -74,7 +79,7 @@ def fetch_recent_papers(
             f"from_publication_date:{from_date.isoformat()},"
             "type:article|review"
         ),
-        "search": build_search_query(),
+        "search": search_query,
         "sort": "publication_date:desc",
         "per_page": per_page,
         "mailto": mailto,

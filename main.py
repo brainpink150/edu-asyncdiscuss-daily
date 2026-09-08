@@ -1,9 +1,12 @@
 """
 教育技术学每日文献推送 —— 主入口
 
-每天从 OpenAlex 检索中英两种语种、按 3:2 配额（外文 3 / 中文 2）、
-按主题相关性排序后推送至邮箱。已推送的论文通过 history 持久化
-避免跨日重复。
+每天从 OpenAlex / Crossref 检索中英两种语种的文献，
+按"外文 3 + 中文 2"配额组合，经历史去重后推送至邮箱。
+
+如果中文期刊数据源不足，会自动：
+1. 用更宽关键词 + 更长时间窗口再试一次
+2. 仍不足时，用高相关外文候选补齐到 5 篇（日志会写明）
 """
 
 import logging
@@ -18,11 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from dotenv import load_dotenv
 
-from src.fetchers.journals import (
-    INTERNATIONAL_JOURNALS,
-    DOMESTIC_JOURNALS,
-    journal_lookup,
-)
+from src.fetchers.journals import INTERNATIONAL_JOURNALS, DOMESTIC_JOURNALS
 from src.fetchers import openalex, crossref
 from src import history
 from src.formatter import render_html, render_markdown
@@ -38,26 +37,64 @@ logger = logging.getLogger("daily")
 # 配额配置：外文 3 篇 + 中文 2 篇
 EN_QUOTA = int(os.getenv("EN_QUOTA", "3"))
 ZH_QUOTA = int(os.getenv("ZH_QUOTA", "2"))
+TOTAL_TARGET = EN_QUOTA + ZH_QUOTA
+
+# OpenAlex 查询用 "|" 做 OR
+EN_QUERY = "|".join([
+    "asynchronous discussion",
+    "online discussion",
+    "online asynchronous discussion",
+    "asynchronous online discussion",
+    "discussion forum",
+    "computer-mediated discussion",
+    "online forum",
+])
+
+ZH_QUERY = "|".join([
+    "异步讨论",
+    "在线讨论",
+    "在线异步讨论",
+    "异步在线讨论",
+    "讨论论坛",
+    "网络讨论",
+    "计算机中介讨论",
+])
+
+# 中文兜底：更宽的关键词 + 更长的窗口，尽量保证 2 篇
+BROADER_ZH_QUERY = "|".join([
+    "在线学习", "网络学习", "远程教育", "开放教育", "教育技术",
+    "信息化教学", "混合式教学", "慕课", "MOOC", "学习分析",
+    "异步交互", "在线交互",
+])
 
 
-def _fetch_for_language(
+def _to_crossref_query(openalex_query: str) -> str:
+    """Crossref 的 query.bibliographic 用 'OR' 而不是 '|'。"""
+    return openalex_query.replace("|", " OR ")
+
+
+def _try_fetch(
     issns: list,
     lookback_days: int,
     quota: int,
     language: str,
     contact_email: str,
     pushed_set: set,
-) -> list:
+    query: str,
+) -> tuple[list, list]:
     """
-    单语种抓取 + 标准化 + 历史过滤 + 排序 + 配额截取。
+    单次抓取尝试：OpenAlex → Crossref → 标准化 → 历史过滤 → 排序。
 
-    候选池拉到 quota * 8，确保历史过滤后还有足够候选。
+    返回 (selected, pool)：
+    - selected: 已截取的 top 配额
+    - pool: 完整候选池（用于后续补位）
     """
     raw = openalex.fetch_recent_papers(
         issns=issns,
         lookback_days=lookback_days,
         per_page=max(quota * 8, 30),
         mailto=contact_email,
+        query=query,
     )
 
     if not raw:
@@ -67,43 +104,97 @@ def _fetch_for_language(
             lookback_days=lookback_days,
             rows=max(quota * 8, 30),
             mailto=contact_email,
+            query=_to_crossref_query(query),
         )
 
     if not raw:
-        logger.warning(f"[{language}] 所有数据源均无结果")
-        return []
+        logger.warning(f"[{language}] 本次尝试所有数据源均无结果")
+        return [], []
 
     papers = [openalex.normalize_work(w) for w in raw]
     papers = openalex.deduplicate(papers)
 
-    # 历史过滤：剔除最近已推过的
     before = len(papers)
     papers = [p for p in papers if not history.is_pushed(p, pushed_set)]
-    logger.info(
-        f"[{language}] 标准化 {before} → 历史过滤后 {len(papers)}"
-    )
+    logger.info(f"[{language}] 标准化 {before} → 历史过滤后 {len(papers)}")
 
     if not papers:
-        return []
+        return [], []
 
-    # 排序 + 截取
-    ranked = openalex.rank_papers(papers, top_k=quota)
-    logger.info(f"[{language}] 取 top {len(ranked)} / {quota} 配额")
-    return ranked
+    ranked = openalex.rank_papers(papers, top_k=max(quota, len(papers)))
+    selected = ranked[:quota]
+    logger.info(f"[{language}] 本次取 top {len(selected)} / {quota} 配额")
+    return selected, ranked
+
+
+def _merge_unique(base: list, extra: list) -> list:
+    """合并两个列表，按 DOI/标题指纹去重，保留 base 中的顺序。"""
+    seen = set()
+    result = []
+    for p in base + extra:
+        doi = (p.get("doi") or "").lower().strip()
+        fp = history._title_fingerprint(p.get("title", ""))
+        key = doi or fp
+        if key and key not in seen:
+            seen.add(key)
+            result.append(p)
+    return result
+
+
+def _fetch_for_language(
+    issns: list,
+    lookback_days: int,
+    quota: int,
+    language: str,
+    contact_email: str,
+    pushed_set: set,
+    query: str,
+    fallback_query: str = None,
+) -> tuple[list, list]:
+    """
+    带兜底策略的单语种抓取。
+
+    1. 先用精准关键词 + lookback_days 抓取
+    2. 如果不够配额，用 fallback_query + 2 倍窗口再试
+    返回 (selected, pool)
+    """
+    selected, pool = _try_fetch(
+        issns, lookback_days, quota, language, contact_email, pushed_set, query
+    )
+
+    if len(selected) < quota and fallback_query:
+        need = quota - len(selected)
+        logger.info(
+            f"[{language}] 精准关键词不足，启用兜底查询，还需 {need} 篇"
+        )
+        extra_selected, extra_pool = _try_fetch(
+            issns,
+            lookback_days * 2,
+            need,
+            language,
+            contact_email,
+            pushed_set,
+            fallback_query,
+        )
+        selected = _merge_unique(selected, extra_selected)
+        pool = _merge_unique(pool, extra_pool)
+        logger.info(
+            f"[{language}] 兜底后共 {len(selected)} / {quota} 篇"
+        )
+
+    return selected, pool
 
 
 def run_pipeline(lookback_days: int = None) -> dict:
     """
     完整流程：
     1. 加载推送历史
-    2. 拉宽窗口到 60 天，候选池充足
-    3. 中英分路抓取 + 历史过滤 + 配额
-    4. 合并、格式化、推送
-    5. 落盘 archive + 写入 history（Actions 会自动 commit 回仓库）
+    2. 中英分路抓取（含中文兜底）
+    3. 中文不足时，用外文候选补齐到目标总数
+    4. 格式化、推送、更新历史
     """
     load_dotenv()
 
-    # 拉宽窗口到 60 天，确保有足够候选
     lookback_days = int(lookback_days or os.getenv("LOOKBACK_DAYS", "60"))
     contact_email = os.getenv("CONTACT_EMAIL") or "daily-bot@example.com"
 
@@ -116,17 +207,36 @@ def run_pipeline(lookback_days: int = None) -> dict:
     en_issns = [j["issn"] for j in INTERNATIONAL_JOURNALS]
     zh_issns = [j["issn"] for j in DOMESTIC_JOURNALS]
 
-    en_papers = _fetch_for_language(
-        en_issns, lookback_days, EN_QUOTA, "en", contact_email, pushed_set
+    en_selected, en_pool = _fetch_for_language(
+        en_issns, lookback_days, EN_QUOTA, "en", contact_email, pushed_set, EN_QUERY
     )
-    zh_papers = _fetch_for_language(
-        zh_issns, lookback_days, ZH_QUOTA, "zh", contact_email, pushed_set
+    zh_selected, zh_pool = _fetch_for_language(
+        zh_issns, lookback_days, ZH_QUOTA, "zh", contact_email, pushed_set, ZH_QUERY,
+        fallback_query=BROADER_ZH_QUERY,
     )
 
-    # 3. 合并
-    top_papers = en_papers + zh_papers
+    # 3. 中文不足时，用外文候选补齐（仍走历史过滤后的 pool）
+    fill_count = 0
+    current_total = len(en_selected) + len(zh_selected)
+    if current_total < TOTAL_TARGET and en_pool:
+        need = TOTAL_TARGET - current_total
+        # 去掉已经在 en_selected / zh_selected 里的
+        already = {history._title_fingerprint(p.get("title", "")) for p in en_selected + zh_selected}
+        already.update({(p.get("doi") or "").lower().strip() for p in en_selected + zh_selected})
+        fillers = [
+            p for p in en_pool
+            if (p.get("doi") or "").lower().strip() not in already
+            and history._title_fingerprint(p.get("title", "")) not in already
+        ]
+        fillers = fillers[:need]
+        fill_count = len(fillers)
+        en_selected = _merge_unique(en_selected, fillers)
+        logger.info(f"中文不足，补 {fill_count} 篇外文 → 外文共 {len(en_selected)}")
+
+    top_papers = en_selected + zh_selected
     logger.info(
-        f"最终筛选：外文 {len(en_papers)} + 中文 {len(zh_papers)} = {len(top_papers)}"
+        f"最终筛选：外文 {len(en_selected)} + 中文 {len(zh_selected)} = {len(top_papers)}"
+        f"（目标 {TOTAL_TARGET}，补位 {fill_count}）"
     )
 
     if not top_papers:
@@ -136,6 +246,7 @@ def run_pipeline(lookback_days: int = None) -> dict:
             "paper_count": 0,
             "en_count": 0,
             "zh_count": 0,
+            "fill_count": 0,
             "status": "no_results",
         }
         _write_summary(summary)
@@ -145,7 +256,6 @@ def run_pipeline(lookback_days: int = None) -> dict:
     html_body = render_html(top_papers, lookback_days=lookback_days)
     md_body = render_markdown(top_papers, lookback_days=lookback_days)
 
-    # 落盘 Markdown 归档
     archive_dir = Path("archive")
     archive_dir.mkdir(exist_ok=True)
     md_file = archive_dir / f"{datetime.now().strftime('%Y-%m-%d')}.md"
@@ -154,18 +264,22 @@ def run_pipeline(lookback_days: int = None) -> dict:
 
     # 5. 邮件推送
     today_str = datetime.now().strftime("%Y年%m月%d日")
-    subject = f"[教育技术学·异步讨论] {today_str} · 外文 {len(en_papers)} + 中文 {len(zh_papers)}"
+    subject = (
+        f"[教育技术学·异步讨论] {today_str} · "
+        f"外文 {len(en_selected)} + 中文 {len(zh_selected)}"
+    )
     sent = send_email(subject=subject, html_body=html_body, text_body=md_body)
 
-    # 6. 更新历史（无论邮件成功失败都更新，避免失败重试时重复推）
+    # 6. 更新历史
     new_hist = history.add_papers(hist, top_papers)
     history.save_history(new_hist)
 
     summary = {
         "date": datetime.now().isoformat(),
         "paper_count": len(top_papers),
-        "en_count": len(en_papers),
-        "zh_count": len(zh_papers),
+        "en_count": len(en_selected),
+        "zh_count": len(zh_selected),
+        "fill_count": fill_count,
         "status": "sent" if sent else "send_failed",
         "subject": subject,
         "papers": [
