@@ -35,19 +35,34 @@ logging.basicConfig(
 logger = logging.getLogger("daily")
 
 # 配额配置：外文 3 篇 + 中文 2 篇
-EN_QUOTA = int(os.getenv("EN_QUOTA", "3"))
-ZH_QUOTA = int(os.getenv("ZH_QUOTA", "2"))
+# 中文源说明（2026-09-16 实测）：
+#   OpenAlex 对 CSSCI 核心刊（电化教育研究 / 中国远程教育 / 开放教育研究等）
+#   的索引停在 2020 年，近 5 年无数据；不限期刊搜中文关键词又全是水刊。
+#   因此默认关闭中文配额（ZH_QUOTA=0），改推 5 篇外文。
+#   日后若接入万方 / CNKI 开放 API，把 ZH_QUOTA 设回 2、EN_QUOTA 设回 3 即可。
+EN_QUOTA = int(os.getenv("EN_QUOTA", "5"))
+ZH_QUOTA = int(os.getenv("ZH_QUOTA", "0"))
 TOTAL_TARGET = EN_QUOTA + ZH_QUOTA
 
 # OpenAlex 查询用 "|" 做 OR
+#
+# 2026-09-16 实测：原「异步讨论」窄主题在 10 本顶刊 60 天窗口只有 27 条候选，
+# 每天 5 篇 6 天就推完导致断流。放宽到教育技术学大类后：
+#   宽关键词 + 60 天  -> 61 条
+#   宽关键词 + 180 天 -> 183 条
+#   宽关键词 + 365 天 -> 408 条
+# 故这里放宽主题并把默认窗口设为 365 天。
 EN_QUERY = "|".join([
-    "asynchronous discussion",
+    "online learning",
+    "blended learning",
+    "learning analytics",
+    "educational technology",
+    "MOOC",
     "online discussion",
-    "online asynchronous discussion",
-    "asynchronous online discussion",
-    "discussion forum",
-    "computer-mediated discussion",
-    "online forum",
+    "asynchronous discussion",
+    "computer-supported collaborative learning",
+    "self-regulated learning",
+    "flipped classroom",
 ])
 
 ZH_QUERY = "|".join([
@@ -66,6 +81,9 @@ BROADER_ZH_QUERY = "|".join([
     "信息化教学", "混合式教学", "慕课", "MOOC", "学习分析",
     "异步交互", "在线交互",
 ])
+
+# 经典回顾：候选池耗尽时，从已推送历史挑高引文献（0 = 关闭）
+CLASSIC_FALLBACK = int(os.getenv("CLASSIC_FALLBACK", "3"))
 
 
 def _to_crossref_query(openalex_query: str) -> str:
@@ -89,10 +107,15 @@ def _try_fetch(
     - selected: 已截取的 top 配额
     - pool: 完整候选池（用于后续补位）
     """
+    # per_page 拉到 OpenAlex 单页上限 200。
+    # 之前 30 太小：按日期倒序取回的最新 30 条大多是已推过的，
+    # 历史过滤后只剩 13 篇，仍会很快断流。
+    per_page = int(os.getenv("PER_PAGE", "200"))
+
     raw = openalex.fetch_recent_papers(
         issns=issns,
         lookback_days=lookback_days,
-        per_page=max(quota * 8, 30),
+        per_page=per_page,
         mailto=contact_email,
         query=query,
     )
@@ -191,11 +214,13 @@ def run_pipeline(lookback_days: int = None) -> dict:
     1. 加载推送历史
     2. 中英分路抓取（含中文兜底）
     3. 中文不足时，用外文候选补齐到目标总数
-    4. 格式化、推送、更新历史
+    4. 候选全部耗尽时，改用「经典高引回顾」兜底，不静默
+    5. 格式化、推送、更新历史
     """
     load_dotenv()
 
-    lookback_days = int(lookback_days or os.getenv("LOOKBACK_DAYS", "60"))
+    # 365 天窗口：实测宽关键词下 408 条候选，避免像 60 天那样 6 天推完断流
+    lookback_days = int(lookback_days or os.getenv("LOOKBACK_DAYS", "365"))
     contact_email = os.getenv("CONTACT_EMAIL") or "daily-bot@example.com"
 
     # 1. 加载历史
@@ -210,10 +235,16 @@ def run_pipeline(lookback_days: int = None) -> dict:
     en_selected, en_pool = _fetch_for_language(
         en_issns, lookback_days, EN_QUOTA, "en", contact_email, pushed_set, EN_QUERY
     )
-    zh_selected, zh_pool = _fetch_for_language(
-        zh_issns, lookback_days, ZH_QUOTA, "zh", contact_email, pushed_set, ZH_QUERY,
-        fallback_query=BROADER_ZH_QUERY,
-    )
+
+    # 中文配额为 0 时直接跳过，省掉一次必定失败的 Crossref 请求（约 30 秒）
+    if ZH_QUOTA > 0:
+        zh_selected, zh_pool = _fetch_for_language(
+            zh_issns, lookback_days, ZH_QUOTA, "zh", contact_email, pushed_set, ZH_QUERY,
+            fallback_query=BROADER_ZH_QUERY,
+        )
+    else:
+        logger.info("[zh] 配额为 0，跳过中文检索（OpenAlex 中文索引停在 2020）")
+        zh_selected, zh_pool = [], []
 
     # 3. 中文不足时，用外文候选补齐（仍走历史过滤后的 pool）
     fill_count = 0
@@ -238,6 +269,19 @@ def run_pipeline(lookback_days: int = None) -> dict:
         f"最终筛选：外文 {len(en_selected)} + 中文 {len(zh_selected)} = {len(top_papers)}"
         f"（目标 {TOTAL_TARGET}，补位 {fill_count}）"
     )
+
+    # 4. 候选池耗尽 → 经典高引回顾兜底，不再静默
+    is_classic_mode = False
+    if not top_papers and CLASSIC_FALLBACK > 0:
+        classics = history.get_classic_picks(hist, CLASSIC_FALLBACK)
+        if classics:
+            top_papers = classics
+            is_classic_mode = True
+            logger.warning(
+                f"候选池已耗尽，改用「经典高引回顾」推送 {len(classics)} 篇"
+            )
+        else:
+            logger.warning("候选池耗尽，且历史为空无法生成回顾")
 
     if not top_papers:
         logger.warning("今日无可推送文献（中英都为空）")
@@ -264,15 +308,28 @@ def run_pipeline(lookback_days: int = None) -> dict:
 
     # 5. 邮件推送
     today_str = datetime.now().strftime("%Y年%m月%d日")
-    subject = (
-        f"[教育技术学·异步讨论] {today_str} · "
-        f"外文 {len(en_selected)} + 中文 {len(zh_selected)}"
-    )
+    if is_classic_mode:
+        subject = (
+            f"[教育技术学·异步讨论] {today_str} · "
+            f"经典回顾 {len(top_papers)} 篇（近期无新文献）"
+        )
+    elif zh_selected:
+        subject = (
+            f"[教育技术学·异步讨论] {today_str} · "
+            f"外文 {len(en_selected)} + 中文 {len(zh_selected)}"
+        )
+    else:
+        # 中文源暂不可用（OpenAlex CSSCI 索引停在 2020），不显示「中文 0」
+        subject = (
+            f"[教育技术学·异步讨论] {today_str} · "
+            f"最新文献 {len(top_papers)} 篇"
+        )
     sent = send_email(subject=subject, html_body=html_body, text_body=md_body)
 
-    # 6. 更新历史
-    new_hist = history.add_papers(hist, top_papers)
-    history.save_history(new_hist)
+    # 6. 更新历史（经典回顾不写入历史，避免占用候选池）
+    if not is_classic_mode:
+        new_hist = history.add_papers(hist, top_papers)
+        history.save_history(new_hist)
 
     summary = {
         "date": datetime.now().isoformat(),
@@ -280,6 +337,7 @@ def run_pipeline(lookback_days: int = None) -> dict:
         "en_count": len(en_selected),
         "zh_count": len(zh_selected),
         "fill_count": fill_count,
+        "classic_mode": is_classic_mode,
         "status": "sent" if sent else "send_failed",
         "subject": subject,
         "papers": [
