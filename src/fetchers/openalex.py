@@ -53,13 +53,18 @@ def fetch_recent_papers(
     per_page: int = 25,
     mailto: Optional[str] = None,
     query: Optional[str] = None,
+    max_pages: int = 5,
 ) -> List[Dict]:
     """
     在指定期刊集合中，检索最近 lookback_days 天内、
     标题或摘要含指定关键词的文献。
 
+    使用 OpenAlex 的 cursor 分页把候选池拉满（避免只拿到最新 200 条、
+    而那 200 条恰好大多已推送过导致「无新文献」的假象）。
+
     Args:
         query: 覆盖默认 KEYWORDS 的自定义查询；默认用 OpenAlex OR 语法 "a|b|c"。
+        max_pages: 最多翻几页；OpenAlex 单页上限 200 条，5 页即最多 1000 条。
 
     返回 OpenAlex work 的原始 JSON 列表。
     """
@@ -73,31 +78,53 @@ def fetch_recent_papers(
     # ISSN 多选用 | 分隔（OpenAlex 标准语法）
     issn_filter = "|".join(issns)
 
-    params = {
-        "filter": (
-            f"primary_location.source.issn:{issn_filter},"
-            f"from_publication_date:{from_date.isoformat()},"
-            "type:article|review"
-        ),
-        "search": search_query,
-        "sort": "publication_date:desc",
-        "per_page": per_page,
-        "mailto": mailto,
-    }
+    # OpenAlex 单页硬上限 200
+    page_size = min(int(per_page or 25), 200)
 
-    url = f"{OPENALEX_BASE}?{urlencode(params)}"
-    logger.info(f"OpenAlex 请求: {url[:200]}...")
+    results: List[Dict] = []
+    cursor = "*"
+    total_count = None
 
-    try:
-        resp = requests.get(url, timeout=30)
-        resp.raise_for_status()
-        data = resp.json()
-    except requests.RequestException as e:
-        logger.error(f"OpenAlex 请求失败: {e}")
-        return []
+    for page in range(max_pages):
+        params = {
+            "filter": (
+                f"primary_location.source.issn:{issn_filter},"
+                f"from_publication_date:{from_date.isoformat()},"
+                "type:article|review"
+            ),
+            "search": search_query,
+            "sort": "publication_date:desc",
+            "per_page": page_size,
+            "cursor": cursor,
+            "mailto": mailto,
+        }
 
-    results = data.get("results", [])
-    logger.info(f"OpenAlex 返回 {len(results)} 条原始结果")
+        url = f"{OPENALEX_BASE}?{urlencode(params)}"
+
+        try:
+            resp = requests.get(url, timeout=40)
+            resp.raise_for_status()
+            data = resp.json()
+        except requests.RequestException as e:
+            logger.error(f"OpenAlex 请求失败（第 {page + 1} 页）: {e}")
+            break
+        except ValueError as e:
+            logger.error(f"OpenAlex 响应不是合法 JSON（第 {page + 1} 页）: {e}")
+            break
+
+        page_results = data.get("results", []) or []
+        results.extend(page_results)
+
+        if total_count is None:
+            total_count = (data.get("meta") or {}).get("count")
+            logger.info(f"OpenAlex 命中总数: {total_count}")
+
+        next_cursor = (data.get("meta") or {}).get("next_cursor")
+        if not page_results or not next_cursor:
+            break
+        cursor = next_cursor
+
+    logger.info(f"OpenAlex 返回 {len(results)} 条原始结果（共 {max_pages} 页上限）")
     return results
 
 
