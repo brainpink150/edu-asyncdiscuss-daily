@@ -63,9 +63,15 @@ def is_pushed(paper: Dict, pushed_set: Set[str]) -> bool:
 
 
 def add_papers(history: Dict, papers: List[Dict]) -> Dict:
-    """把刚推送的论文标识合入历史。"""
+    """
+    把刚推送的论文合入历史。
+
+    除 DOI / 标题指纹外，额外保存论文摘要信息（papers 字段），
+    用于候选池耗尽时的「经典高引回顾」。
+    """
     dois = set(history.get("dois", []))
     hashes = set(history.get("title_hashes", []))
+    archived = {p.get("_fp"): p for p in history.get("papers", []) if p.get("_fp")}
 
     for p in papers:
         doi = (p.get("doi") or "").lower().strip()
@@ -74,8 +80,19 @@ def add_papers(history: Dict, papers: List[Dict]) -> Dict:
         fp = _title_fingerprint(p.get("title", ""))
         if fp:
             hashes.add(fp)
+            archived[fp] = {
+                "_fp": fp,
+                "title": p.get("title", ""),
+                "doi": p.get("doi", ""),
+                "url": p.get("url", ""),
+                "authors": p.get("authors", ""),
+                "venue": p.get("venue", ""),
+                "date": p.get("date", ""),
+                "cited_by_count": p.get("cited_by_count", 0),
+                "abstract": (p.get("abstract") or "")[:400],
+            }
 
-    # 超过上限则裁掉（简单策略：FIFO 不可用，保留全部并加 soft cap 警告）
+    papers_list = list(archived.values())
     if len(dois) + len(hashes) > MAX_HISTORY_SIZE:
         logger.warning(
             f"历史已超 {MAX_HISTORY_SIZE} 条，建议清空或调大上限。"
@@ -85,8 +102,34 @@ def add_papers(history: Dict, papers: List[Dict]) -> Dict:
     return {
         "dois": sorted(dois),
         "title_hashes": sorted(hashes),
+        "papers": papers_list,
         "last_updated": datetime.now(timezone.utc).isoformat(),
     }
+
+
+def get_classic_picks(history: Dict, top_k: int) -> List[Dict]:
+    """
+    候选池耗尽时的兜底：从已推送历史里挑被引最高的几篇，做「经典回顾」。
+
+    会打上 is_classic=True + abstract 前缀标记，供邮件模板区分。
+    """
+    papers = history.get("papers") or []
+    if not papers:
+        return []
+
+    scored = sorted(
+        papers,
+        key=lambda p: (p.get("cited_by_count") or 0, p.get("date") or ""),
+        reverse=True,
+    )
+
+    picks = []
+    for p in scored[:top_k]:
+        item = dict(p)
+        item["is_classic"] = True
+        item["abstract"] = "【经典回顾】" + (p.get("abstract") or "")
+        picks.append(item)
+    return picks
 
 
 def save_history(history: Dict) -> None:
