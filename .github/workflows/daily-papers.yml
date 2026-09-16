@@ -8,17 +8,21 @@ on:
   workflow_dispatch:
     inputs:
       lookback_days:
-        description: "回溯天数（建议 ≥ 60 以保证候选池充足）"
+        description: "回溯天数（365 = 实测 408 条候选，避免断流）"
         required: false
-        default: "60"
+        default: "365"
       en_quota:
         description: "外文期刊推送条数"
         required: false
-        default: "3"
+        default: "5"
       zh_quota:
-        description: "中文期刊推送条数"
+        description: "中文期刊推送条数（OpenAlex 中文索引停在 2020，默认 0）"
         required: false
-        default: "2"
+        default: "0"
+      classic_fallback:
+        description: "候选耗尽时改推几篇经典高引回顾（0=关闭）"
+        required: false
+        default: "3"
 
 # 防止并发：上一次没跑完就跳过
 concurrency:
@@ -62,9 +66,11 @@ jobs:
           MAIL_FROM: ${{ secrets.MAIL_FROM }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
           # ====== 检索参数 ======
-          LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '60' }}
-          EN_QUOTA: ${{ github.event.inputs.en_quota || '3' }}
-          ZH_QUOTA: ${{ github.event.inputs.zh_quota || '2' }}
+          LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '365' }}
+          EN_QUOTA: ${{ github.event.inputs.en_quota || '5' }}
+          ZH_QUOTA: ${{ github.event.inputs.zh_quota || '0' }}
+          CLASSIC_FALLBACK: ${{ github.event.inputs.classic_fallback || '3' }}
+          PER_PAGE: "200"
           # 可选：换成自己的邮箱，让 OpenAlex 给你更高速率
           CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
         run: python main.py
