@@ -1,6 +1,7 @@
 {
   "dois": [
     "10.1002/jcal.70194",
+    "10.1002/jcal.70198",
     "10.1002/jcal.70293",
     "10.1002/jcal.70294",
     "10.1002/jcal.70300",
@@ -14,10 +15,12 @@
     "10.1002/jcal.70315",
     "10.1002/jcal.70317",
     "10.1002/jcal.70318",
+    "10.1002/jcal.70321",
     "10.1002/jcal.70322",
     "10.1002/jcal.70323",
     "10.1002/jcal.70325",
     "10.1002/jcal.70327",
+    "10.1002/jcal.70328",
     "10.1007/s11423-026-10603-4",
     "10.1007/s11423-026-10646-7",
     "10.1007/s11423-026-10662-7",
@@ -28,7 +31,9 @@
     "10.1007/s11423-026-10698-9",
     "10.1007/s11423-026-10704-0",
     "10.1007/s11423-026-10708-w",
+    "10.1007/s11423-026-10709-9",
     "10.1007/s11423-026-10715-x",
+    "10.1016/j.compedu.2025.105485",
     "10.1016/j.compedu.2026.105728",
     "10.1016/j.compedu.2026.105745",
     "10.1016/j.iheduc.2026.101088",
@@ -38,6 +43,7 @@
   ],
   "title_hashes": [
     "0868b204c61d7c3686ffdb406664d09532403f70",
+    "1bceab884dcd2ed4bda40d630d0bcfe48bb93209",
     "227f80e5494363165c2cd2f11774bd7570847738",
     "2396ecc5eecae4b5af7f8f5a2e86ed9cd7bd8653",
     "23effc5f0aba9577935b49a01b499dd7eabc0675",
@@ -51,6 +57,7 @@
     "5a638e8e07495b1d0ca4a10131a25448b7201178",
     "63800de95abcaa13d9fc9f3d06a63f26ce047f2b",
     "6956331d875c0756b6809135b1771daa48a568f4",
+    "70788c81cb9319029164dd4071a8d8ff28b71092",
     "77be568fcfcbeb442b669446ce59ca3ef8b09086",
     "7aaa4247f0e4e1ae971cc6d7d08245ad85d74f6e",
     "7ebc105bcc3ecb781e335ed291d0b0816f0d4d5c",
@@ -60,10 +67,13 @@
     "8b0119e11ece53dd0ea570c64a9ecdcdf6eb2843",
     "91a8a5cf9a1e63a6dbef7644a0c0846112b7a758",
     "967d12f455860a820eb805fa2b81579fa256d54a",
+    "9c38fa9698680e3559f88f56e93cbf6caec2804b",
     "9cd35ea3d09e5698190c24e394b7252b7d1bfab4",
     "9ed92a7e36eaaf587ecd533b499691eeeef03915",
+    "a15e80648a48d6d6dc557c29e88c88a8ef83632a",
     "a8d7b36df59330bc4030fb42f6a33f742ba2174d",
     "b34e5899b0044a6d19f4c340f41a7fd75f04e7ae",
+    "b35a951d410edad1d15e2ae9bd69175ece98d7bc",
     "cbd60f8c8ecf5787bcd2a29bbea4afe586f0cae4",
     "ce8bc88ea2b3efa8a69bf9a87ea1740649800d2e",
     "d8cf10e96cf71d0da41f5acefbe74467d8193462",
@@ -128,7 +138,62 @@
       "date": "2026-09-12",
       "cited_by_count": 0,
       "abstract": ""
+    },
+    {
+      "_fp": "1bceab884dcd2ed4bda40d630d0bcfe48bb93209",
+      "title": "The Disfluency Effect Revisited: Why Audiovisual Channel Manipulations Impair Motivation and Trigger Illusions Without Boosting Learning",
+      "doi": "10.1002/jcal.70328",
+      "url": "https://doi.org/10.1002/jcal.70328",
+      "authors": "Jingjing Xiao, Xueting Xiong, Boyang Cui, Lijuan Zhang, Lixian Yang et al.",
+      "venue": "JCAL",
+      "date": "2026-09-14",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background Previous research on multimedia learning has predominantly applied perceptual disfluency consistently across both visual and auditory channels within instructional materials. Such dual‐channel disfluency may impose excessive extraneous cognitive load (ECL), thereby undermining learning outcomes. The disfluency effect, however, posits that perceptual disruptions to processing fl"
+    },
+    {
+      "_fp": "a15e80648a48d6d6dc557c29e88c88a8ef83632a",
+      "title": "Exploring Mathematics Teacher Educators' Lesson Study Experiences in Supporting Pre‐Service Teachers' Dialogic Engagement With AI",
+      "doi": "10.1002/jcal.70321",
+      "url": "https://doi.org/10.1002/jcal.70321",
+      "authors": "J. Robinson, Evrim Erbilgin, Jason D. Johnson, Reem Hashem, Serigne Mbaye Gningue",
+      "venue": "JCAL",
+      "date": "2026-09-08",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background Lesson study is an educator‐led professional development approach that originated in Japan, in which a group of educators collaboratively plan, teach, observe, reflect, and revise lessons to improve teaching and learning. In this study, five teacher educators collaborated in the context of lesson study to explore the pedagogical use of artificial intelligence (AI) in their blen"
+    },
+    {
+      "_fp": "70788c81cb9319029164dd4071a8d8ff28b71092",
+      "title": "Parental AI Investment Behaviours and AI ‐Mediated Informal Digital Learning of English: The Chain Mediating Role of Children's Perceived AI Value and Effort Expectancy for AI",
+      "doi": "10.1002/jcal.70198",
+      "url": "https://doi.org/10.1002/jcal.70198",
+      "authors": "Honggang Liu",
+      "venue": "JCAL",
+      "date": "2026-02-02",
+      "cited_by_count": 39,
+      "abstract": "ABSTRACT Background The proliferation of generative artificial intelligence (AI) has popularised AI‐Mediated Informal Digital Learning of English (AI‐IDLE). Whilst research in this area is growing, social influencing factors, especially the role of parents as significant others, remain underexplored. Objectives Guided by the Situational Expectancy‐Value Theory (SEVT), this study aims to investigat"
+    },
+    {
+      "_fp": "b35a951d410edad1d15e2ae9bd69175ece98d7bc",
+      "title": "Co-constructing adaptive lesson plans with GenAI: Pre-service teachers' Intelligent-TPACK and prompt engineering strategies",
+      "doi": "10.1016/j.compedu.2025.105485",
+      "url": "https://doi.org/10.1016/j.compedu.2025.105485",
+      "authors": "İsmail Çelik, Sini Kontkanen, Jari Laru, Alanur Ahsen Dalyanci",
+      "venue": "C&E",
+      "date": "2025-10-13",
+      "cited_by_count": 31,
+      "abstract": "Generative Artificial Intelligence (GenAI) technologies present new opportunities for teachers to design adaptive and student-centered instruction. However, the educational value of GenAI depends not only on technical usage but also on teachers’ ability to formulate pedagogically meaningful prompts. Prompting strategies are not isolated from teachers` prior knowledge and skills. Less is known abou"
+    },
+    {
+      "_fp": "9c38fa9698680e3559f88f56e93cbf6caec2804b",
+      "title": "Differentiated impacts of GenAI-supported self-regulated game-based science learning: a behavioural and epistemic network analysis of high- and low-achieving students",
+      "doi": "10.1007/s11423-026-10709-9",
+      "url": "https://doi.org/10.1007/s11423-026-10709-9",
+      "authors": "Alif Syaiful Adam, Gwo‐Jen Hwang, Husni Mubarok",
+      "venue": "ETR&D",
+      "date": "2026-09-03",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-09-16T13:18:22.219628+00:00"
+  "last_updated": "2026-09-17T01:08:45.090524+00:00"
 }
