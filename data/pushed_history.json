@@ -13,6 +13,7 @@
     "10.1002/jcal.70312",
     "10.1002/jcal.70314",
     "10.1002/jcal.70315",
+    "10.1002/jcal.70316",
     "10.1002/jcal.70317",
     "10.1002/jcal.70318",
     "10.1002/jcal.70321",
@@ -40,13 +41,18 @@
     "10.1016/j.compedu.2025.105485",
     "10.1016/j.compedu.2026.105728",
     "10.1016/j.compedu.2026.105745",
+    "10.1016/j.compedu.2026.105747",
     "10.1016/j.iheduc.2026.101088",
+    "10.1016/j.iheduc.2026.101115",
+    "10.1016/j.iheduc.2026.101116",
     "10.1016/j.learninstruc.2026.102437",
     "10.1016/j.learninstruc.2026.102459",
     "10.1016/j.learninstruc.2026.102463",
-    "10.1016/j.learninstruc.2026.102471"
+    "10.1016/j.learninstruc.2026.102471",
+    "10.1080/08923647.2026.2719280"
   ],
   "title_hashes": [
+    "0400e576b740eebcb323832cbe452bfbec841167",
     "0868b204c61d7c3686ffdb406664d09532403f70",
     "1bceab884dcd2ed4bda40d630d0bcfe48bb93209",
     "227f80e5494363165c2cd2f11774bd7570847738",
@@ -64,6 +70,7 @@
     "5a638e8e07495b1d0ca4a10131a25448b7201178",
     "63800de95abcaa13d9fc9f3d06a63f26ce047f2b",
     "6956331d875c0756b6809135b1771daa48a568f4",
+    "6ead812bc7e28ad73394113c197b71294d8a4940",
     "70788c81cb9319029164dd4071a8d8ff28b71092",
     "77be568fcfcbeb442b669446ce59ca3ef8b09086",
     "7aaa4247f0e4e1ae971cc6d7d08245ad85d74f6e",
@@ -84,14 +91,17 @@
     "b35a951d410edad1d15e2ae9bd69175ece98d7bc",
     "b4169db367df2f63e626bd24b1dcbd2891b861b5",
     "cbd60f8c8ecf5787bcd2a29bbea4afe586f0cae4",
+    "ce1ae90ed2144d27b87788d1ea1bb03b22a2a218",
     "ce8bc88ea2b3efa8a69bf9a87ea1740649800d2e",
     "d8cf10e96cf71d0da41f5acefbe74467d8193462",
+    "d9614763fffab9fb10594155cca91ba9305ddd78",
     "e0e533eb5eae2d5493de7d0928069c8c211ce3cc",
     "e268e494dacbed83405b80f67ee05783cbc48cab",
     "e27b02417e33e3d928682924154084b642dee95d",
     "ec41d4fc8f28040bdde5670402ed6b7da4b78cb0",
     "f49508b67e916c05550cca488e3fb51807a7f289",
-    "f754e0ceb462d5617756aecc5bad9d9308b14c3e"
+    "f754e0ceb462d5617756aecc5bad9d9308b14c3e",
+    "fb99208c2190ef51da6de158818c6bf9740350e4"
   ],
   "papers": [
     {
@@ -258,7 +268,62 @@
       "date": "2025-10-08",
       "cited_by_count": 28,
       "abstract": ""
+    },
+    {
+      "_fp": "fb99208c2190ef51da6de158818c6bf9740350e4",
+      "title": "Teacher Readiness‐By‐Design for AI ‐Rich Interactive Learning",
+      "doi": "10.1002/jcal.70316",
+      "url": "https://doi.org/10.1002/jcal.70316",
+      "authors": "Tendai Charles",
+      "venue": "JCAL",
+      "date": "2026-09-01",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background Artificial intelligence (AI)‐rich educational technologies are expanding rapidly, yet teacher readiness is still commonly represented through adoption, confidence or competence constructs that do not explain the quality of the learning designs produced. Objective This conceptual article develops readiness‐by‐design as an enactment‐oriented capability: teachers' capacity to mobi"
+    },
+    {
+      "_fp": "6ead812bc7e28ad73394113c197b71294d8a4940",
+      "title": "Trace-based measurement of self-regulated learning in primary mathematics: Implementation and validation within an adaptive learning platform",
+      "doi": "10.1016/j.compedu.2026.105747",
+      "url": "https://doi.org/10.1016/j.compedu.2026.105747",
+      "authors": "Borchen Kuo, Chiahua Lin, Frances Chang, Chihwei Yang, Xinyu Li et al.",
+      "venue": "C&E",
+      "date": "2026-09-01",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "ce1ae90ed2144d27b87788d1ea1bb03b22a2a218",
+      "title": "Context-sensitive learning analytics in open and distance education: Identifying students' online learning behavior patterns in a large-scale Indonesian context",
+      "doi": "10.1016/j.iheduc.2026.101116",
+      "url": "https://doi.org/10.1016/j.iheduc.2026.101116",
+      "authors": "Dewi Juliah Ratnaningsih, Tian Belawati, Kristanti Ambar Puspitasari, Fitria Amastini",
+      "venue": "IHE",
+      "date": "2026-09-01",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "d9614763fffab9fb10594155cca91ba9305ddd78",
+      "title": "Unveiling determinants of learner satisfaction in online courses: An explainable machine learning technique using unstructured reviews",
+      "doi": "10.1016/j.iheduc.2026.101115",
+      "url": "https://doi.org/10.1016/j.iheduc.2026.101115",
+      "authors": "Yong Qin, Chaoguang Luo, Yuyan Luo, Luwei Wang",
+      "venue": "IHE",
+      "date": "2026-09-01",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "0400e576b740eebcb323832cbe452bfbec841167",
+      "title": "Evaluation of Self-Paced Online Training on Pre-Service General Education Teachers’ Case Application of Visual Schedules for Individuals with Intellectual and Developmental Disabilities",
+      "doi": "10.1080/08923647.2026.2719280",
+      "url": "https://doi.org/10.1080/08923647.2026.2719280",
+      "authors": "Zhigao Liang, David Lee",
+      "venue": "AJDE",
+      "date": "2026-08-31",
+      "cited_by_count": 0,
+      "abstract": "Researchers in the current study created a self-paced online training module of visual schedules and evaluated the effects of online training on pre-service teachers’ case application of the visual schedules strategy (“CHECK”) to support individuals with intellectual and developmental disabilities. A pre/posttest control group design was utilized. Results indicated that the self-paced online train"
     }
   ],
-  "last_updated": "2026-09-18T01:08:08.030944+00:00"
+  "last_updated": "2026-09-19T01:07:19.571851+00:00"
 }
