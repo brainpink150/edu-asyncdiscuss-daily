@@ -1,5 +1,7 @@
 {
   "dois": [
+    "10.1002/jcal.70174",
+    "10.1002/jcal.70181",
     "10.1002/jcal.70194",
     "10.1002/jcal.70198",
     "10.1002/jcal.70293",
@@ -24,6 +26,7 @@
     "10.1002/jcal.70327",
     "10.1002/jcal.70328",
     "10.1002/jcal.70337",
+    "10.1007/s11423-025-10549-z",
     "10.1007/s11423-026-10603-4",
     "10.1007/s11423-026-10646-7",
     "10.1007/s11423-026-10662-7",
@@ -39,6 +42,7 @@
     "10.1007/s11423-026-10715-x",
     "10.1016/j.compedu.2025.105472",
     "10.1016/j.compedu.2025.105485",
+    "10.1016/j.compedu.2025.105511",
     "10.1016/j.compedu.2026.105728",
     "10.1016/j.compedu.2026.105745",
     "10.1016/j.compedu.2026.105747",
@@ -49,11 +53,13 @@
     "10.1016/j.learninstruc.2026.102459",
     "10.1016/j.learninstruc.2026.102463",
     "10.1016/j.learninstruc.2026.102471",
-    "10.1080/08923647.2026.2719280"
+    "10.1080/08923647.2026.2719280",
+    "10.1111/jcal.70153"
   ],
   "title_hashes": [
     "0400e576b740eebcb323832cbe452bfbec841167",
     "0868b204c61d7c3686ffdb406664d09532403f70",
+    "089d506a116972080895095247e6986216bdac81",
     "1bceab884dcd2ed4bda40d630d0bcfe48bb93209",
     "227f80e5494363165c2cd2f11774bd7570847738",
     "2396ecc5eecae4b5af7f8f5a2e86ed9cd7bd8653",
@@ -79,12 +85,14 @@
     "87f7d214b9d5603be2b19d9054e1a91af39010c3",
     "88c2041ea27a85d81b3dcf8b929bd77d5392f8aa",
     "8b0119e11ece53dd0ea570c64a9ecdcdf6eb2843",
+    "8d23c6af6606d8332edf0e292a596eeef7e31bf1",
     "91a8a5cf9a1e63a6dbef7644a0c0846112b7a758",
     "967d12f455860a820eb805fa2b81579fa256d54a",
     "9c38fa9698680e3559f88f56e93cbf6caec2804b",
     "9cd35ea3d09e5698190c24e394b7252b7d1bfab4",
     "9ed92a7e36eaaf587ecd533b499691eeeef03915",
     "a15e80648a48d6d6dc557c29e88c88a8ef83632a",
+    "a178858fcdb81af3e40fb4231f0571692069ae9e",
     "a8d7b36df59330bc4030fb42f6a33f742ba2174d",
     "ac5a0f214e6a82d469410e26a0a29ecf0564bf62",
     "b34e5899b0044a6d19f4c340f41a7fd75f04e7ae",
@@ -93,8 +101,10 @@
     "cbd60f8c8ecf5787bcd2a29bbea4afe586f0cae4",
     "ce1ae90ed2144d27b87788d1ea1bb03b22a2a218",
     "ce8bc88ea2b3efa8a69bf9a87ea1740649800d2e",
+    "cfb656b210c29f67cf285fb36f56f4f2b274fd71",
     "d8cf10e96cf71d0da41f5acefbe74467d8193462",
     "d9614763fffab9fb10594155cca91ba9305ddd78",
+    "db05114e5be0f05941f53b98a58389b7ec5de2c9",
     "e0e533eb5eae2d5493de7d0928069c8c211ce3cc",
     "e268e494dacbed83405b80f67ee05783cbc48cab",
     "e27b02417e33e3d928682924154084b642dee95d",
@@ -323,7 +333,62 @@
       "date": "2026-08-31",
       "cited_by_count": 0,
       "abstract": "Researchers in the current study created a self-paced online training module of visual schedules and evaluated the effects of online training on pre-service teachers’ case application of the visual schedules strategy (“CHECK”) to support individuals with intellectual and developmental disabilities. A pre/posttest control group design was utilized. Results indicated that the self-paced online train"
+    },
+    {
+      "_fp": "8d23c6af6606d8332edf0e292a596eeef7e31bf1",
+      "title": "The Facilitating Role of Enjoyment and Anxiety in Shaping ( AI ‐Mediated) Informal Language Learning and Confidence: An Explanatory Sequential Mixed‐Methods Investigation",
+      "doi": "10.1002/jcal.70181",
+      "url": "https://doi.org/10.1002/jcal.70181",
+      "authors": "Xian Zhao, Md Kamal Hossain, Peijian Paul Sun",
+      "venue": "JCAL",
+      "date": "2026-01-04",
+      "cited_by_count": 23,
+      "abstract": "ABSTRACT Background Despite growing attention to English education in Bangladesh, conventional classroom instruction often fails to meet learners' diverse needs or ensure effective language development. Informal digital learning of English (IDLE) has emerged as a promising avenue for fostering learners' affective experience and enhancing proficiency beyond formal classroom settings. Nevertheless, "
+    },
+    {
+      "_fp": "089d506a116972080895095247e6986216bdac81",
+      "title": "Designing AI-powered learning: adult learners’ expectations for curriculum and human-AI interaction",
+      "doi": "10.1007/s11423-025-10549-z",
+      "url": "https://doi.org/10.1007/s11423-025-10549-z",
+      "authors": "Jinhee Kim, Seongryeong Yu, Rita Detrick, Xi Lin, Na Li",
+      "venue": "ETR&D",
+      "date": "2025-09-26",
+      "cited_by_count": 23,
+      "abstract": "Abstract Despite the potential benefits offered by GenAI technologies to provide innovative solutions to address distinct challenges faced by working adult learners (ALs) in higher education and beyond, there is limited understanding of how best to structure AI-powered learning for this population while ensuring their distinct needs and perspectives are considered. Hence, this study aimed to deter"
+    },
+    {
+      "_fp": "db05114e5be0f05941f53b98a58389b7ec5de2c9",
+      "title": "Leveraging prompt-based LLMs for automated scoring and feedback generation in higher education",
+      "doi": "10.1016/j.compedu.2025.105511",
+      "url": "https://doi.org/10.1016/j.compedu.2025.105511",
+      "authors": "Eman AlGhamdi, Yuheng Li, Dragan Gašević, Guanliang Chen",
+      "venue": "C&E",
+      "date": "2025-11-26",
+      "cited_by_count": 20,
+      "abstract": "As demand grows for personalized, scalable assessments in higher education (including both scoring and feedback provision), large language models (LLMs) have emerged as promising tools. While human educators typically perform scoring and feedback in a sequential and interrelated manner, existing research has largely addressed these tasks separately. This raises important questions about LLMs’ abil"
+    },
+    {
+      "_fp": "cfb656b210c29f67cf285fb36f56f4f2b274fd71",
+      "title": "Are Teachers Addicted to AI ? Analysing Factors Influencing Dependence on Generative AI Through the I‐ PACE Model",
+      "doi": "10.1002/jcal.70174",
+      "url": "https://doi.org/10.1002/jcal.70174",
+      "authors": "Yiran Du, Mi Tang, Kunjie Jia, Chenghao Wang, Bin Zou",
+      "venue": "JCAL",
+      "date": "2025-12-05",
+      "cited_by_count": 19,
+      "abstract": "ABSTRACT Background The integration of generative artificial intelligence (AI) into education has revolutionised teaching practices, offering educators advanced tools for lesson planning, content creation, personalised learning and administrative automation. While AI enhances efficiency and instructional effectiveness, concerns have emerged regarding teachers' potential overreliance on these techn"
+    },
+    {
+      "_fp": "a178858fcdb81af3e40fb4231f0571692069ae9e",
+      "title": "Who Gives Feedback Matters: Student Biases Towards Human and AI ‐Generated Formative Feedback",
+      "doi": "10.1111/jcal.70153",
+      "url": "https://doi.org/10.1111/jcal.70153",
+      "authors": "Tanya Nazaretsky, Paola Mejia‐Domenzain, Vinitra Swamy, Jibril Frej, Tanja Käser",
+      "venue": "JCAL",
+      "date": "2025-12-02",
+      "cited_by_count": 19,
+      "abstract": "ABSTRACT Background Feedback is essential for learning, helping individuals understand and improve their performance. However, providing timely, personalised feedback in higher education is challenging. Generative AI offers a scalable solution, yet little is known about students' biases towards AI‐generated feedback. Objectives This study aims to investigate how the identity of the feedback provid"
     }
   ],
-  "last_updated": "2026-09-19T01:07:19.571851+00:00"
+  "last_updated": "2026-09-20T01:07:47.893156+00:00"
 }
