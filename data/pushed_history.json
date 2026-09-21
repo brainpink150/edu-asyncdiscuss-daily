@@ -1,5 +1,6 @@
 {
   "dois": [
+    "10.1002/jcal.70171",
     "10.1002/jcal.70174",
     "10.1002/jcal.70181",
     "10.1002/jcal.70194",
@@ -43,6 +44,7 @@
     "10.1016/j.compedu.2025.105472",
     "10.1016/j.compedu.2025.105485",
     "10.1016/j.compedu.2025.105511",
+    "10.1016/j.compedu.2026.105564",
     "10.1016/j.compedu.2026.105728",
     "10.1016/j.compedu.2026.105745",
     "10.1016/j.compedu.2026.105747",
@@ -54,12 +56,17 @@
     "10.1016/j.learninstruc.2026.102463",
     "10.1016/j.learninstruc.2026.102471",
     "10.1080/08923647.2026.2719280",
+    "10.1111/bjet.70026",
+    "10.1111/bjet.70047",
+    "10.1111/bjet.70058",
     "10.1111/jcal.70153"
   ],
   "title_hashes": [
     "0400e576b740eebcb323832cbe452bfbec841167",
+    "0414fcdc58c2ca38f4c0f00a6e567af4cc68c967",
     "0868b204c61d7c3686ffdb406664d09532403f70",
     "089d506a116972080895095247e6986216bdac81",
+    "1b06cc21bcf41d9d86f86d3b2813e9bb315f8adb",
     "1bceab884dcd2ed4bda40d630d0bcfe48bb93209",
     "227f80e5494363165c2cd2f11774bd7570847738",
     "2396ecc5eecae4b5af7f8f5a2e86ed9cd7bd8653",
@@ -73,6 +80,7 @@
     "56e229c085a949b564be98b3b284df6b3ca8c035",
     "5711b2c20ca694f756b093a021a9aef93f33f011",
     "58881bd1e08893ae4939547f6d0570d89ae2f6dc",
+    "59c419670115f3bef6bbc26ac1f96aefb44f2f5f",
     "5a638e8e07495b1d0ca4a10131a25448b7201178",
     "63800de95abcaa13d9fc9f3d06a63f26ce047f2b",
     "6956331d875c0756b6809135b1771daa48a568f4",
@@ -95,6 +103,7 @@
     "a178858fcdb81af3e40fb4231f0571692069ae9e",
     "a8d7b36df59330bc4030fb42f6a33f742ba2174d",
     "ac5a0f214e6a82d469410e26a0a29ecf0564bf62",
+    "b041e798ca092584fce8c6d8e4c615fe3f4362dc",
     "b34e5899b0044a6d19f4c340f41a7fd75f04e7ae",
     "b35a951d410edad1d15e2ae9bd69175ece98d7bc",
     "b4169db367df2f63e626bd24b1dcbd2891b861b5",
@@ -105,6 +114,7 @@
     "d8cf10e96cf71d0da41f5acefbe74467d8193462",
     "d9614763fffab9fb10594155cca91ba9305ddd78",
     "db05114e5be0f05941f53b98a58389b7ec5de2c9",
+    "e096325dfdc12054192c8f157d7d2669d2152247",
     "e0e533eb5eae2d5493de7d0928069c8c211ce3cc",
     "e268e494dacbed83405b80f67ee05783cbc48cab",
     "e27b02417e33e3d928682924154084b642dee95d",
@@ -388,7 +398,62 @@
       "date": "2025-12-02",
       "cited_by_count": 19,
       "abstract": "ABSTRACT Background Feedback is essential for learning, helping individuals understand and improve their performance. However, providing timely, personalised feedback in higher education is challenging. Generative AI offers a scalable solution, yet little is known about students' biases towards AI‐generated feedback. Objectives This study aims to investigate how the identity of the feedback provid"
+    },
+    {
+      "_fp": "b041e798ca092584fce8c6d8e4c615fe3f4362dc",
+      "title": "A dialogic theoretical foundation for integrating generative AI into pedagogical design",
+      "doi": "10.1111/bjet.70026",
+      "url": "https://doi.org/10.1111/bjet.70026",
+      "authors": "Rupert Wegerif, Imogen Casebourne",
+      "venue": "BJET",
+      "date": "2025-11-16",
+      "cited_by_count": 16,
+      "abstract": "Generative AI presents a profound challenge to the existing structures and purposes of education. It forces us to reconsider not only how we teach and learn but also, more fundamentally, what education is for. This conceptual paper argues that, in order to integrate AI into education in a way that can meet the major challenges facing humanity, ranging from ecological crisis to the future of democr"
+    },
+    {
+      "_fp": "59c419670115f3bef6bbc26ac1f96aefb44f2f5f",
+      "title": "AI support in self‐regulated learning: A decade of technological evolution and meta‐analysis",
+      "doi": "10.1111/bjet.70058",
+      "url": "https://doi.org/10.1111/bjet.70058",
+      "authors": "Jun Xu, Yuying Luo, Chengliang Wang, Mengji Wang, Yonghe Wu",
+      "venue": "BJET",
+      "date": "2026-03-12",
+      "cited_by_count": 14,
+      "abstract": "Abstract This meta‐analysis systematically examines 35 empirical studies (2013–2025) investigating artificial intelligence applications within Zimmerman's cyclical model of self‐regulated learning (SRL). Three principal discoveries emerge: (1) Technological progression has evolved through three co‐existing paradigms: rule‐based architectures, data‐driven adaptive systems and generative AI ecosyste"
+    },
+    {
+      "_fp": "0414fcdc58c2ca38f4c0f00a6e567af4cc68c967",
+      "title": "Development and evaluation of artificial intelligence literacy training for teacher education students",
+      "doi": "10.1111/bjet.70047",
+      "url": "https://doi.org/10.1111/bjet.70047",
+      "authors": "Tam Hong Le, Luna Huynh, Belle Dang, Hiep‐Hung Pham, Nga Thi Viet Nguyen et al.",
+      "venue": "BJET",
+      "date": "2026-01-27",
+      "cited_by_count": 14,
+      "abstract": "Abstract Teacher education students play double role as present learners and future educators. Hence, they need targeted training to navigate the growing influence of Generative Artificial Intelligence (GenAI) on teaching, learning and professional identity. However, existing artificial intelligence (AI) literacy programmes predominantly emphasize technical AI knowledge and pre‐GenAI tools or are "
+    },
+    {
+      "_fp": "1b06cc21bcf41d9d86f86d3b2813e9bb315f8adb",
+      "title": "Generative artificial intelligence augments social interactivity and learning outcomes: Advancing the framework of a scaffolded human–GenAI shared agency",
+      "doi": "10.1016/j.compedu.2026.105564",
+      "url": "https://doi.org/10.1016/j.compedu.2026.105564",
+      "authors": "Yi‐Chen Juan, Y. Tina Lee, Jiun-Yu Wu",
+      "venue": "C&E",
+      "date": "2026-01-08",
+      "cited_by_count": 13,
+      "abstract": "Generative Artificial Intelligence (GenAI) functions not merely as a tool but an active collaborator in human knowledge construction; however, the Human-GenAI interaction dynamics is still underexplored. This study investigates Human-GenAI interaction profiles, the network interactivity and profile differences within a statistics learning community, as well as the underlying mechanisms linking Hum"
+    },
+    {
+      "_fp": "e096325dfdc12054192c8f157d7d2669d2152247",
+      "title": "AI ‐Powered Applications’ Effects on English Language Learners’ Cognitive, Metacognitive, and Resource Management Strategies, and Language Achievement",
+      "doi": "10.1002/jcal.70171",
+      "url": "https://doi.org/10.1002/jcal.70171",
+      "authors": "Junhua Chen, Goudarz Alibakhshi",
+      "venue": "JCAL",
+      "date": "2025-12-28",
+      "cited_by_count": 13,
+      "abstract": "ABSTRACT Background Generative AI (GenAI) offers scalable feedback and planning support, yet rigorous evidence on how AI‐supported instruction shapes EFL learners' self‐regulated strategies and achievement remains limited. Objectives The main objectives are to test whether a feedback‐oriented GenAI integration improves (a) cognitive, metacognitive, and resource‐management strategies and (b) Englis"
     }
   ],
-  "last_updated": "2026-09-20T01:07:47.893156+00:00"
+  "last_updated": "2026-09-21T01:08:19.850184+00:00"
 }
