@@ -5,6 +5,7 @@
     "10.1002/jcal.70181",
     "10.1002/jcal.70194",
     "10.1002/jcal.70198",
+    "10.1002/jcal.70244",
     "10.1002/jcal.70256",
     "10.1002/jcal.70293",
     "10.1002/jcal.70294",
@@ -28,6 +29,8 @@
     "10.1002/jcal.70325",
     "10.1002/jcal.70327",
     "10.1002/jcal.70328",
+    "10.1002/jcal.70331",
+    "10.1002/jcal.70332",
     "10.1002/jcal.70337",
     "10.1007/s11423-025-10549-z",
     "10.1007/s11423-026-10603-4",
@@ -37,6 +40,7 @@
     "10.1007/s11423-026-10675-2",
     "10.1007/s11423-026-10678-z",
     "10.1007/s11423-026-10693-0",
+    "10.1007/s11423-026-10697-w",
     "10.1007/s11423-026-10698-9",
     "10.1007/s11423-026-10704-0",
     "10.1007/s11423-026-10708-w",
@@ -64,6 +68,7 @@
     "10.1111/bjet.70047",
     "10.1111/bjet.70056",
     "10.1111/bjet.70058",
+    "10.1111/bjet.70087",
     "10.1111/jcal.70153"
   ],
   "title_hashes": [
@@ -71,7 +76,9 @@
     "0414fcdc58c2ca38f4c0f00a6e567af4cc68c967",
     "0868b204c61d7c3686ffdb406664d09532403f70",
     "089d506a116972080895095247e6986216bdac81",
+    "0e1e70e8219d7b55207f04df9521e402308a0617",
     "117614d2e3627772c5db3e87a68793e2eb65702d",
+    "170516dbb3ad698d432ee8f5381d0f3c4f5f0b02",
     "1b06cc21bcf41d9d86f86d3b2813e9bb315f8adb",
     "1b1375e7e34bf8095467029a0131d3844798f550",
     "1bceab884dcd2ed4bda40d630d0bcfe48bb93209",
@@ -93,6 +100,7 @@
     "5a638e8e07495b1d0ca4a10131a25448b7201178",
     "63800de95abcaa13d9fc9f3d06a63f26ce047f2b",
     "6956331d875c0756b6809135b1771daa48a568f4",
+    "6d59e943053f9484cffb23887ee0d6a86a85e87e",
     "6ead812bc7e28ad73394113c197b71294d8a4940",
     "70788c81cb9319029164dd4071a8d8ff28b71092",
     "77be568fcfcbeb442b669446ce59ca3ef8b09086",
@@ -116,6 +124,8 @@
     "b34e5899b0044a6d19f4c340f41a7fd75f04e7ae",
     "b35a951d410edad1d15e2ae9bd69175ece98d7bc",
     "b4169db367df2f63e626bd24b1dcbd2891b861b5",
+    "b8a4830b9cae4f27cb4955c44a7c5383df9cae2a",
+    "c693dc69bb05412f12ca4af7e27b4ebcfcb2da40",
     "cbd60f8c8ecf5787bcd2a29bbea4afe586f0cae4",
     "ce1ae90ed2144d27b87788d1ea1bb03b22a2a218",
     "ce8bc88ea2b3efa8a69bf9a87ea1740649800d2e",
@@ -518,7 +528,62 @@
       "date": "2026-04-02",
       "cited_by_count": 3,
       "abstract": "Abstract This paper presents findings from a quasi‐experimental difference‐in‐difference study on three different implementation modalities of the same EdTech intervention, implemented in Pujehun district in Sierra Leone. It offers a critical discussion of the impact of two different personalised modalities and one non‐personalised modality on literacy and numeracy of early primary learners. The r"
+    },
+    {
+      "_fp": "6d59e943053f9484cffb23887ee0d6a86a85e87e",
+      "title": "Trace Data of Secondary Students and Linguistic Analysis to Predict Learner Performance in a Multi‐Text Writing Task",
+      "doi": "10.1002/jcal.70331",
+      "url": "https://doi.org/10.1002/jcal.70331",
+      "authors": "Halima Alnashiri, Mladen Raković, Sadia Nawaz, Xinyu Li, Gloria Milena Fernandez-Nieto et al.",
+      "venue": "JCAL",
+      "date": "2026-09-21",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background Writing from multiple sources is a cognitively demanding task that requires students to integrate reading, planning, and composition processes. While prior research has demonstrated the importance of self‐regulated learning (SRL) and linguistic features in predicting writing performance, most studies have focused on university students, with limited research targeting secondary"
+    },
+    {
+      "_fp": "0e1e70e8219d7b55207f04df9521e402308a0617",
+      "title": "Customizing AI for writing pedagogy: a systematic review of pedagogical goals, theoretical principles, and technical design",
+      "doi": "10.1007/s11423-026-10697-w",
+      "url": "https://doi.org/10.1007/s11423-026-10697-w",
+      "authors": "Ying Luo",
+      "venue": "ETR&D",
+      "date": "2026-09-18",
+      "cited_by_count": 0,
+      "abstract": "Abstract The rapid expansion of artificial intelligence (AI)–based writing tools in education has outpaced systematic understanding of how pedagogical intentions, theoretical commitments, and technical customization are translated into AI system design. Customization is conceptualized here as the deliberate modification of AI system behavior to align outputs with pedagogical intent. In response to"
+    },
+    {
+      "_fp": "170516dbb3ad698d432ee8f5381d0f3c4f5f0b02",
+      "title": "Authentic and functional dialogue with AI ‐based student avatars: Evidence from a practice‐based teacher education program",
+      "doi": "10.1111/bjet.70087",
+      "url": "https://doi.org/10.1111/bjet.70087",
+      "authors": "Dennis Hauk, Franziska Menter, Jan‐Michael Schorling",
+      "venue": "BJET",
+      "date": "2026-09-17",
+      "cited_by_count": 0,
+      "abstract": "Abstract Interactions with AI‐based student avatars offer scalable opportunities to practice educational dialogue in practice‐based teacher education (PBTE), yet little is known about the interaction quality of such simulations. This exploratory case study examined whether avatar‐mediated exchanges provide authentic and functional learning opportunities for teacher education. N = 21 preservice tea"
+    },
+    {
+      "_fp": "b8a4830b9cae4f27cb4955c44a7c5383df9cae2a",
+      "title": "The Effects of a Computerised Teacher‐Mediated Intervention on the Emotional Understanding of Autistic Children",
+      "doi": "10.1002/jcal.70332",
+      "url": "https://doi.org/10.1002/jcal.70332",
+      "authors": "Ifat Bar, Ofer Golan, Sigal Eden",
+      "venue": "JCAL",
+      "date": "2026-09-17",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background Autism spectrum disorder is associated with persistent challenges in emotional understanding, encompassing difficulties in recognising emotions from nonverbal cues, interpreting others' affective and mental states, as well as in emotional language. These challenges may impede the social functioning of autistic children. Objectives This study evaluated the effectiveness of Emoti"
+    },
+    {
+      "_fp": "c693dc69bb05412f12ca4af7e27b4ebcfcb2da40",
+      "title": "Disciplinary and Educational Level Differences in AI ‐Mediated Informal Digital Learning of English ( AI ‐ IDLE ): A Qualitative Epistemic Network Analysis",
+      "doi": "10.1002/jcal.70244",
+      "url": "https://doi.org/10.1002/jcal.70244",
+      "authors": "Chenghao Wang, Lanfang Sun, Jiahao Yan, Bin Zou",
+      "venue": "JCAL",
+      "date": "2026-04-15",
+      "cited_by_count": 3,
+      "abstract": "ABSTRACT Background As generative artificial intelligence (GenAI) becomes more deeply integrated into AI‐mediated informal digital learning of English (AI‐IDLE), understanding how learners organise their acceptance of these tools is increasingly important. Existing research has largely relied on variable‐centred approaches, offering limited insight into how acceptance beliefs are configured across"
     }
   ],
-  "last_updated": "2026-09-22T01:07:07.777780+00:00"
+  "last_updated": "2026-09-23T01:08:00.306271+00:00"
 }
