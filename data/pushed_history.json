@@ -34,6 +34,7 @@
     "10.1002/jcal.70337",
     "10.1007/s11423-025-10549-z",
     "10.1007/s11423-026-10603-4",
+    "10.1007/s11423-026-10635-w",
     "10.1007/s11423-026-10646-7",
     "10.1007/s11423-026-10662-7",
     "10.1007/s11423-026-10670-7",
@@ -51,10 +52,13 @@
     "10.1016/j.compedu.2025.105485",
     "10.1016/j.compedu.2025.105511",
     "10.1016/j.compedu.2026.105564",
+    "10.1016/j.compedu.2026.105640",
     "10.1016/j.compedu.2026.105728",
     "10.1016/j.compedu.2026.105745",
     "10.1016/j.compedu.2026.105747",
+    "10.1016/j.compedu.2026.105749",
     "10.1016/j.iheduc.2026.101088",
+    "10.1016/j.iheduc.2026.101094",
     "10.1016/j.iheduc.2026.101115",
     "10.1016/j.iheduc.2026.101116",
     "10.1016/j.learninstruc.2026.102373",
@@ -69,6 +73,7 @@
     "10.1111/bjet.70056",
     "10.1111/bjet.70058",
     "10.1111/bjet.70087",
+    "10.1111/bjet.70090",
     "10.1111/jcal.70153"
   ],
   "title_hashes": [
@@ -98,7 +103,9 @@
     "58881bd1e08893ae4939547f6d0570d89ae2f6dc",
     "59c419670115f3bef6bbc26ac1f96aefb44f2f5f",
     "5a638e8e07495b1d0ca4a10131a25448b7201178",
+    "61d31f3d84d91184ff86d8c5fa166d0633adae42",
     "63800de95abcaa13d9fc9f3d06a63f26ce047f2b",
+    "679030bedad230f59167072aea1841ffa13552b9",
     "6956331d875c0756b6809135b1771daa48a568f4",
     "6d59e943053f9484cffb23887ee0d6a86a85e87e",
     "6ead812bc7e28ad73394113c197b71294d8a4940",
@@ -121,9 +128,12 @@
     "a8d7b36df59330bc4030fb42f6a33f742ba2174d",
     "ac5a0f214e6a82d469410e26a0a29ecf0564bf62",
     "b041e798ca092584fce8c6d8e4c615fe3f4362dc",
+    "b12dd908cc8981409f0225297a68a998a26de5c9",
+    "b1528e1ae2526c9cf5627518efd4e78bdabf98cc",
     "b34e5899b0044a6d19f4c340f41a7fd75f04e7ae",
     "b35a951d410edad1d15e2ae9bd69175ece98d7bc",
     "b4169db367df2f63e626bd24b1dcbd2891b861b5",
+    "b55da4c633833ae9c097a50dcc69b47c55bd829d",
     "b8a4830b9cae4f27cb4955c44a7c5383df9cae2a",
     "c693dc69bb05412f12ca4af7e27b4ebcfcb2da40",
     "cbd60f8c8ecf5787bcd2a29bbea4afe586f0cae4",
@@ -583,7 +593,62 @@
       "date": "2026-04-15",
       "cited_by_count": 3,
       "abstract": "ABSTRACT Background As generative artificial intelligence (GenAI) becomes more deeply integrated into AI‐mediated informal digital learning of English (AI‐IDLE), understanding how learners organise their acceptance of these tools is increasingly important. Existing research has largely relied on variable‐centred approaches, offering limited insight into how acceptance beliefs are configured across"
+    },
+    {
+      "_fp": "b55da4c633833ae9c097a50dcc69b47c55bd829d",
+      "title": "A helping hand or a dominant partner? Individual perceptions of GenAI reliance and human agency in collaborative learning",
+      "doi": "10.1111/bjet.70090",
+      "url": "https://doi.org/10.1111/bjet.70090",
+      "authors": "Yanyi Wu, Xinyu Lu",
+      "venue": "BJET",
+      "date": "2026-09-22",
+      "cited_by_count": 0,
+      "abstract": "Abstract Generative artificial intelligence (GenAI) has become a routine source of feedback, explanation, drafting support and task guidance in higher education. This study examined how individual students' self‐reported GenAI reliance and perceived human agency co‐varied over time in an AI‐supported collaborative writing course. Three‐wave data were collected from 342 undergraduates working in 85"
+    },
+    {
+      "_fp": "61d31f3d84d91184ff86d8c5fa166d0633adae42",
+      "title": "Do strategies make a difference? Evaluating the impact on video-based learning and student engagement in K-12 education",
+      "doi": "10.1016/j.compedu.2026.105749",
+      "url": "https://doi.org/10.1016/j.compedu.2026.105749",
+      "authors": "Sebastian Rohr, Mario Frei, Sven Hilbert, Oliver Tepner",
+      "venue": "C&E",
+      "date": "2026-09-10",
+      "cited_by_count": 0,
+      "abstract": "Explanatory videos are central to digital and blended learning environments, especially in student-centered formats such as flipped classroom. Their instructional value depends not only on video design, but also on learners' ability to regulate their engagement with video-based content. Although research on flipped classroom, video analytics, and self-regulated learning has expanded considerably, "
+    },
+    {
+      "_fp": "b1528e1ae2526c9cf5627518efd4e78bdabf98cc",
+      "title": "Stressed minds, smart tools: How academic expectation stress fuels generative AI dependency in Chinese higher education",
+      "doi": "10.1016/j.iheduc.2026.101094",
+      "url": "https://doi.org/10.1016/j.iheduc.2026.101094",
+      "authors": "Li Zhang (8200), Yunxue Deng",
+      "venue": "IHE",
+      "date": "2026-06-03",
+      "cited_by_count": 2,
+      "abstract": ""
+    },
+    {
+      "_fp": "679030bedad230f59167072aea1841ffa13552b9",
+      "title": "Teachers’ engagement in professional learning for digital resource integration: A cross-cultural comparison of task-related demands and technology acceptance",
+      "doi": "10.1007/s11423-026-10635-w",
+      "url": "https://doi.org/10.1007/s11423-026-10635-w",
+      "authors": "Jinhai Liu, Mengtong Wei",
+      "venue": "ETR&D",
+      "date": "2026-05-19",
+      "cited_by_count": 2,
+      "abstract": ""
+    },
+    {
+      "_fp": "b12dd908cc8981409f0225297a68a998a26de5c9",
+      "title": "Can asynchronous learning modules about generative AI increase students’ knowledge, skills, and self-efficacy for genAI?",
+      "doi": "10.1016/j.compedu.2026.105640",
+      "url": "https://doi.org/10.1016/j.compedu.2026.105640",
+      "authors": "Allison E. Connell Pensky, Lydia Eckstein Jackson, Michael C. Melville, Laura O. Pottmeyer, Zachary Mineroff et al.",
+      "venue": "C&E",
+      "date": "2026-04-14",
+      "cited_by_count": 2,
+      "abstract": "The goal of the present large-scale experiment was to test if a 90-minute, open access set of online learning modules with embedded practice and feedback would enhance students’ generative artificial intelligence (genAI) competency. We also examined whether impacts were experienced equitably by all included student demographic groups. Participants were 1,368 undergraduate and graduate students enr"
     }
   ],
-  "last_updated": "2026-09-23T01:08:00.306271+00:00"
+  "last_updated": "2026-09-24T01:08:05.444205+00:00"
 }
