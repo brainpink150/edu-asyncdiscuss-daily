@@ -9,6 +9,7 @@ OpenAlex (https://openalex.org) 是一个开放的学术文献索引，
 """
 
 import logging
+import time
 from typing import List, Dict, Optional
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urlencode
@@ -20,6 +21,10 @@ from .journals import journal_lookup
 logger = logging.getLogger(__name__)
 
 OPENALEX_BASE = "https://api.openalex.org/works"
+
+# 429 退避重试配置
+RETRY_TIMES = 3        # 每页最多重试 3 次
+RETRY_BACKOFF = 5      # 退避基数：第 1 次等 5s，第 2 次 10s，第 3 次 15s
 
 # 与"在线异步讨论"主题相关的核心检索词
 # 同时覆盖中文/英文常见表达，OpenAlex 会按 title + abstract 做相关性排序
@@ -38,8 +43,12 @@ KEYWORDS = [
     "网络讨论",
 ]
 
-# 备用联系邮箱（建议换成你自己的，提高 OpenAlex 速率限制）
-CONTACT_EMAIL = "daily-bot@example.com"
+# 备用联系邮箱。
+# 2026-09-29：原来是 daily-bot@example.com 这种假邮箱，OpenAlex 不认，
+# 不给 polite pool 配额，导致 9-27 起连续三天 429 Too Many Requests。
+# OpenAlex 要求真实邮箱才放宽速率限制，故默认值改用项目推送用的真实邮箱。
+# 想换成别的：在 GitHub 仓库 Settings → Secrets 里设 CONTACT_EMAIL。
+CONTACT_EMAIL = "1985403252@qq.com"
 
 
 def build_search_query() -> str:
@@ -101,15 +110,32 @@ def fetch_recent_papers(
 
         url = f"{OPENALEX_BASE}?{urlencode(params)}"
 
-        try:
-            resp = requests.get(url, timeout=40)
-            resp.raise_for_status()
-            data = resp.json()
-        except requests.RequestException as e:
-            logger.error(f"OpenAlex 请求失败（第 {page + 1} 页）: {e}")
-            break
-        except ValueError as e:
-            logger.error(f"OpenAlex 响应不是合法 JSON（第 {page + 1} 页）: {e}")
+        # 2026-09-29：遇到 429 要退避重试。之前直接 break，导致整次运行
+        # 拿不到任何候选，只能退回「经典回顾」。
+        data = None
+        for attempt in range(RETRY_TIMES):
+            try:
+                resp = requests.get(url, timeout=40)
+                if resp.status_code == 429:
+                    wait = RETRY_BACKOFF * (attempt + 1)
+                    logger.warning(
+                        f"OpenAlex 429 限流（第 {page + 1} 页），{wait}s 后重试"
+                        f"（{attempt + 1}/{RETRY_TIMES}）"
+                    )
+                    time.sleep(wait)
+                    continue
+                resp.raise_for_status()
+                data = resp.json()
+                break
+            except requests.RequestException as e:
+                logger.error(f"OpenAlex 请求失败（第 {page + 1} 页）: {e}")
+                time.sleep(RETRY_BACKOFF)
+            except ValueError as e:
+                logger.error(f"OpenAlex 响应不是合法 JSON（第 {page + 1} 页）: {e}")
+                break
+
+        if data is None:
+            logger.error(f"OpenAlex 第 {page + 1} 页重试耗尽，停止翻页")
             break
 
         page_results = data.get("results", []) or []
@@ -245,13 +271,21 @@ def deduplicate(papers: List[Dict]) -> List[Dict]:
     return unique
 
 
-def rank_papers(papers: List[Dict], top_k: int = 5) -> List[Dict]:
+def rank_papers(
+    papers: List[Dict],
+    top_k: int = 5,
+    keywords: Optional[List[str]] = None,
+) -> List[Dict]:
     """
     对候选文献排序：
     1. 优先近期
     2. 摘要与关键词命中数加权
+
+    Args:
+        keywords: 命中加分词表。不传则用模块默认的窄主题 KEYWORDS；
+                  按主题分组检索时应传入该组自己的关键词，否则打分会跑偏。
     """
-    keyword_set = set(k.lower() for k in KEYWORDS)
+    keyword_set = set(k.lower() for k in (keywords or KEYWORDS))
 
     def score(p: Dict) -> float:
         s = 0.0
