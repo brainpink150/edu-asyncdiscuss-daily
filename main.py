@@ -187,6 +187,11 @@ BROADER_ZH_QUERY = "|".join([
 # 经典回顾：候选池耗尽时，从已推送历史挑高引文献（0 = 关闭）
 CLASSIC_FALLBACK = int(os.getenv("CLASSIC_FALLBACK", "3"))
 
+# 主题组之间的请求间隔（秒）。
+# 2026-09-29 实测：GitHub Actions 的共享 IP 上 OpenAlex 限流很严，
+# 第 1 组拿到数据后第 2 组起连续 429（2 秒间隔不够），提到 8 秒后改善。
+GROUP_INTERVAL = int(os.getenv("GROUP_INTERVAL", "8"))
+
 
 def _to_crossref_query(openalex_query: str) -> str:
     """Crossref 的 query.bibliographic 用 'OR' 而不是 '|'。"""
@@ -390,8 +395,10 @@ def run_pipeline(lookback_days: int = None) -> dict:
         if sel:
             en_selected = _merge_unique(en_selected, sel[:1])
         en_pool = _merge_unique(en_pool, pool)
-        # 组间留间隔，避免短时间密集请求被 OpenAlex 限流
-        time.sleep(2)
+        # 组间留间隔，避免短时间密集请求被 OpenAlex 限流。
+        # 实测：GitHub Actions 的 IP 上，第 1 组成功、第 2 组起连续 429
+        # （2 秒间隔不够），8 秒间隔后命中率明显改善。
+        time.sleep(GROUP_INTERVAL)
 
     logger.info(
         f"主题轮换抓取完成：{len(en_selected)} / {TOTAL_TARGET} 篇"
