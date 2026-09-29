@@ -13,6 +13,7 @@ import logging
 import os
 import sys
 import json
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -44,26 +45,127 @@ EN_QUOTA = int(os.getenv("EN_QUOTA", "5"))
 ZH_QUOTA = int(os.getenv("ZH_QUOTA", "0"))
 TOTAL_TARGET = EN_QUOTA + ZH_QUOTA
 
-# OpenAlex 查询用 "|" 做 OR
+# ============================================================================
+# 主题分组（2026-09-29 扩充）
 #
-# 2026-09-16 实测：原「异步讨论」窄主题在 10 本顶刊 60 天窗口只有 27 条候选，
-# 每天 5 篇 6 天就推完导致断流。放宽到教育技术学大类后：
-#   宽关键词 + 60 天  -> 61 条
-#   宽关键词 + 180 天 -> 183 条
-#   宽关键词 + 365 天 -> 408 条
-# 故这里放宽主题并把默认窗口设为 365 天。
-EN_QUERY = "|".join([
-    "online learning",
-    "blended learning",
-    "learning analytics",
-    "educational technology",
-    "MOOC",
-    "online discussion",
-    "asynchronous discussion",
-    "computer-supported collaborative learning",
-    "self-regulated learning",
-    "flipped classroom",
-])
+# 背景 1：2026-09-16 实测，原「异步讨论」窄主题在 10 本顶刊 60 天窗口只有 27 条
+#         候选，每天 5 篇 6 天推完断流。故窗口放宽到 365 天、主题放宽到教育技术学大类。
+#
+# 背景 2：2026-09-28 实测，**OpenAlex 的 search 参数里 OR 关键词超过约 20 个会
+#         超时**（32 词查询 34 秒后失败）。所以不能把所有关键词拼成一个大 query，
+#         改为分组检索 + 本地合并。每组词数控制在 10 个以内。
+#
+# 每日策略：7 个组里按日期轮换选 5 组、每组取 1 篇，保证每天推送覆盖不同方向，
+#           7 天一个完整周期（每组 5 次）。
+#
+# 各组命中量为 2026-09-28 实测（365 天窗口 / 10 本教育技术顶刊）。
+# ============================================================================
+TOPIC_GROUPS = [
+    {
+        "key": "core",
+        "label": "教育技术核心",
+        "hits": 456,
+        "keywords": [
+            "online learning",
+            "blended learning",
+            "learning analytics",
+            "educational technology",
+            "MOOC",
+            "online discussion",
+            "asynchronous discussion",
+            "computer-supported collaborative learning",
+            "self-regulated learning",
+            "flipped classroom",
+        ],
+    },
+    {
+        "key": "ai",
+        "label": "AI 教育应用",
+        "hits": 299,
+        "keywords": [
+            "generative AI education",
+            "AI literacy",
+            "intelligent tutoring system",
+            "conversational agent",
+            "ChatGPT education",
+            "large language model education",
+            "human-AI collaboration",
+            "AI agent",
+        ],
+    },
+    {
+        "key": "teacher",
+        "label": "教师·师范教育",
+        "hits": 307,
+        "keywords": [
+            "teacher education",
+            "pre-service teacher",
+            "preservice teacher",
+            "teacher professional development",
+            "TPACK",
+            "teacher competence",
+            "teacher training",
+        ],
+    },
+    {
+        "key": "collab",
+        "label": "协作与认知",
+        "hits": 327,
+        "keywords": [
+            "collaborative learning",
+            "knowledge building",
+            "argumentation",
+            "social presence",
+            "cognitive presence",
+            "community of inquiry",
+            "peer feedback",
+        ],
+    },
+    {
+        "key": "method",
+        "label": "学习科学教法",
+        "hits": 334,
+        "keywords": [
+            "metacognition",
+            "formative assessment",
+            "gamification",
+            "problem-based learning",
+            "project-based learning",
+            "inquiry-based learning",
+            "scaffolding",
+        ],
+    },
+    {
+        "key": "tech",
+        "label": "技术学习形态",
+        "hits": 341,
+        "keywords": [
+            "mobile learning",
+            "virtual reality",
+            "augmented reality",
+            "adaptive learning",
+            "personalized learning",
+            "microlearning",
+            "immersive learning",
+        ],
+    },
+    {
+        "key": "affect",
+        "label": "动机与情感",
+        "hits": 493,
+        "keywords": [
+            "motivation",
+            "engagement",
+            "self-efficacy",
+            "learning anxiety",
+            "academic emotion",
+            "student satisfaction",
+        ],
+    },
+]
+
+# 向后兼容：旧代码里引用 EN_QUERY 的地方（Crossref 兜底等）用核心组关键词
+EN_QUERY = "|".join(TOPIC_GROUPS[0]["keywords"])
 
 ZH_QUERY = "|".join([
     "异步讨论",
@@ -99,6 +201,9 @@ def _try_fetch(
     contact_email: str,
     pushed_set: set,
     query: str,
+    rank_keywords: list = None,
+    per_page: int = None,
+    max_pages: int = None,
 ) -> tuple[list, list]:
     """
     单次抓取尝试：OpenAlex → Crossref → 标准化 → 历史过滤 → 排序。
@@ -107,10 +212,10 @@ def _try_fetch(
     - selected: 已截取的 top 配额
     - pool: 完整候选池（用于后续补位）
     """
-    # per_page 拉到 OpenAlex 单页上限 200。
+    # per_page：单页条数，默认拉到 OpenAlex 上限 200。
     # 之前 30 太小：按日期倒序取回的最新 30 条大多是已推过的，
     # 历史过滤后只剩 13 篇，仍会很快断流。
-    per_page = int(os.getenv("PER_PAGE", "200"))
+    per_page = per_page or int(os.getenv("PER_PAGE", "200"))
 
     raw = openalex.fetch_recent_papers(
         issns=issns,
@@ -118,7 +223,9 @@ def _try_fetch(
         per_page=per_page,
         mailto=contact_email,
         query=query,
+        max_pages=max_pages or 5,
     )
+    source = "openalex"
 
     if not raw:
         logger.warning(f"[{language}] OpenAlex 无结果，尝试 Crossref 兜底")
@@ -129,12 +236,22 @@ def _try_fetch(
             mailto=contact_email,
             query=_to_crossref_query(query),
         )
+        source = "crossref"
 
     if not raw:
         logger.warning(f"[{language}] 本次尝试所有数据源均无结果")
         return [], []
 
-    papers = [openalex.normalize_work(w) for w in raw]
+    # 2026-09-29 修复：以前无论数据来自哪个源，都用 openalex.normalize_work 处理。
+    # 但 Crossref 的字段是 DOI（大写）且没有 id 字段，normalize 后 doi/paper_id
+    # 全为空，deduplicate() 用 doi or paper_id 做 key 时整批被丢弃 —— 实测
+    # 「Crossref 返回 40 条 → 标准化 0」，兜底形同虚设。
+    # 这里按来源分派：Crossref 数据走 crossref.normalize_crossref_item。
+    normalizer = (
+        crossref.normalize_crossref_item if source == "crossref"
+        else openalex.normalize_work
+    )
+    papers = [normalizer(w) for w in raw]
     papers = openalex.deduplicate(papers)
 
     before = len(papers)
@@ -144,7 +261,9 @@ def _try_fetch(
     if not papers:
         return [], []
 
-    ranked = openalex.rank_papers(papers, top_k=max(quota, len(papers)))
+    ranked = openalex.rank_papers(
+        papers, top_k=max(quota, len(papers)), keywords=rank_keywords
+    )
     selected = ranked[:quota]
     logger.info(f"[{language}] 本次取 top {len(selected)} / {quota} 配额")
     return selected, ranked
@@ -173,6 +292,9 @@ def _fetch_for_language(
     pushed_set: set,
     query: str,
     fallback_query: str = None,
+    rank_keywords: list = None,
+    per_page: int = None,
+    max_pages: int = None,
 ) -> tuple[list, list]:
     """
     带兜底策略的单语种抓取。
@@ -182,7 +304,8 @@ def _fetch_for_language(
     返回 (selected, pool)
     """
     selected, pool = _try_fetch(
-        issns, lookback_days, quota, language, contact_email, pushed_set, query
+        issns, lookback_days, quota, language, contact_email, pushed_set, query,
+        rank_keywords=rank_keywords, per_page=per_page, max_pages=max_pages,
     )
 
     if len(selected) < quota and fallback_query:
@@ -198,6 +321,7 @@ def _fetch_for_language(
             contact_email,
             pushed_set,
             fallback_query,
+            rank_keywords=rank_keywords,
         )
         selected = _merge_unique(selected, extra_selected)
         pool = _merge_unique(pool, extra_pool)
@@ -221,19 +345,56 @@ def run_pipeline(lookback_days: int = None) -> dict:
 
     # 365 天窗口：实测宽关键词下 408 条候选，避免像 60 天那样 6 天推完断流
     lookback_days = int(lookback_days or os.getenv("LOOKBACK_DAYS", "365"))
-    contact_email = os.getenv("CONTACT_EMAIL") or "daily-bot@example.com"
+    # 必须是真实邮箱：OpenAlex 只给真实邮箱 polite pool 配额。
+    # 2026-09-29 前用 daily-bot@example.com（假邮箱），导致连续三天 429。
+    contact_email = os.getenv("CONTACT_EMAIL") or "1985403252@qq.com"
 
     # 1. 加载历史
     hist = history.load_history()
     pushed_set = history.get_pushed_set(hist)
     logger.info(f"历史已记录 {len(pushed_set)} 条论文标识")
 
-    # 2. 中英分路抓取
+    # 2. 按主题分组轮换抓取（每组 1 篇，保证每天覆盖不同方向）
     en_issns = [j["issn"] for j in INTERNATIONAL_JOURNALS]
     zh_issns = [j["issn"] for j in DOMESTIC_JOURNALS]
 
-    en_selected, en_pool = _fetch_for_language(
-        en_issns, lookback_days, EN_QUOTA, "en", contact_email, pushed_set, EN_QUERY
+    # 7 个组按日期轮换取 5 组：7 天一个完整周期，每组每周期出现 5 次
+    day_index = datetime.now().toordinal()
+    start = day_index % len(TOPIC_GROUPS)
+    today_groups = [
+        TOPIC_GROUPS[(start + i) % len(TOPIC_GROUPS)] for i in range(TOTAL_TARGET)
+    ]
+    logger.info(
+        f"今日主题轮换（第 {day_index} 天，起点 {start}）: "
+        + " › ".join(g["label"] for g in today_groups)
+    )
+
+    en_selected: list = []
+    en_pool: list = []
+    for g in today_groups:
+        sel, pool = _fetch_for_language(
+            en_issns,
+            lookback_days,
+            1,  # 每组取 1 篇
+            "en",
+            contact_email,
+            pushed_set,
+            "|".join(g["keywords"]),
+            rank_keywords=g["keywords"],
+            # 每组只要 1 篇，不必拉满：单页 100 条、只取 1 页。
+            # 实测 5 组 × 5 页 = 25 个请求会打爆 OpenAlex 限流（429），
+            # 降到 5 组 × 1 页 = 5 个请求后与改造前持平。
+            per_page=100,
+            max_pages=1,
+        )
+        if sel:
+            en_selected = _merge_unique(en_selected, sel[:1])
+        en_pool = _merge_unique(en_pool, pool)
+        # 组间留间隔，避免短时间密集请求被 OpenAlex 限流
+        time.sleep(2)
+
+    logger.info(
+        f"主题轮换抓取完成：{len(en_selected)} / {TOTAL_TARGET} 篇"
     )
 
     # 中文配额为 0 时直接跳过，省掉一次必定失败的 Crossref 请求（约 30 秒）
@@ -246,7 +407,7 @@ def run_pipeline(lookback_days: int = None) -> dict:
         logger.info("[zh] 配额为 0，跳过中文检索（OpenAlex 中文索引停在 2020）")
         zh_selected, zh_pool = [], []
 
-    # 3. 中文不足时，用外文候选补齐（仍走历史过滤后的 pool）
+    # 3. 某主题组没取到时，用其他组的候选补齐（仍走历史过滤后的 pool）
     fill_count = 0
     current_total = len(en_selected) + len(zh_selected)
     if current_total < TOTAL_TARGET and en_pool:
@@ -262,7 +423,9 @@ def run_pipeline(lookback_days: int = None) -> dict:
         fillers = fillers[:need]
         fill_count = len(fillers)
         en_selected = _merge_unique(en_selected, fillers)
-        logger.info(f"中文不足，补 {fill_count} 篇外文 → 外文共 {len(en_selected)}")
+        logger.info(
+            f"部分主题组无新文献，从候选池补 {fill_count} 篇 → 共 {len(en_selected)}"
+        )
 
     top_papers = en_selected + zh_selected
     logger.info(
