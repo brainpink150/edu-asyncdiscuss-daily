@@ -20,7 +20,8 @@ logger = logging.getLogger(__name__)
 
 CROSSREF_BASE = "https://api.crossref.org/works"
 
-CONTACT_EMAIL = "daily-bot@example.com"
+# 同 openalex.py：必须用真实邮箱，否则会被限流。
+CONTACT_EMAIL = "1985403252@qq.com"
 
 
 def _fetch_one_batch(
