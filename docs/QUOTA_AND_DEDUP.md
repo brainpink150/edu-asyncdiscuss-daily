@@ -1,6 +1,73 @@
 # 配额 + 去重改造说明
 
-> 最后更新：2026-09-16（第二版：修复「候选池 6 天推完 → 连续静默」）
+> 最后更新：2026-09-29（第三版：主题分组轮换 + 修复 429 限流与 Crossref 死代码）
+
+---
+
+## 零、2026-09-29 第三次事故与修复
+
+### 现象
+9-27 / 9-28 / 9-29 连续三天，Actions 全绿、邮件照发，但推的是「经典高引回顾」旧文，没有新文献。
+
+### 根因一：OpenAlex 429 限流，且代码遇到 429 直接放弃
+```
+[ERROR] OpenAlex 请求失败（第 1 页）: 429 Client Error: Too Many Requests
+[INFO]  OpenAlex 返回 0 条原始结果
+[WARNING] 候选池已耗尽，改用「经典高引回顾」推送 3 篇
+```
+两层问题：
+1. `mailto` 用的是假邮箱 `daily-bot@example.com`。OpenAlex 只给**真实邮箱**进 polite pool。
+2. 代码遇到 429 直接 `break`，不重试 —— 一次限流就整次运行报废。
+
+### 根因二：Crossref 兜底是死代码（一直没生效过）
+`_try_fetch` 里无论数据来自 OpenAlex 还是 Crossref，都用 `openalex.normalize_work()` 处理。
+但 Crossref 的字段是 `DOI`（**大写**）且**没有 `id` 字段**，normalize 后 `doi` / `paper_id` 全空，
+`deduplicate()` 用 `doi or paper_id` 做 key 时整批被丢弃。
+
+日志实证：`Crossref 最终返回 40 条` → `[en] 标准化 0`。
+
+### 根因三：主题分组后请求数暴涨，反而加剧限流
+改成 5 组轮换后是 `5 组 × 5 页分页 = 25 个请求`，比原来的 5 个翻了 5 倍。
+
+### 修复
+| 改动 | 文件 |
+|------|------|
+| 默认 `mailto` 换真实邮箱（可用 `CONTACT_EMAIL` secret 覆盖） | `main.py` / `openalex.py` / `crossref.py` |
+| 429 指数退避重试（5s / 10s / 15s，每页最多 3 次） | `openalex.py` |
+| 按来源分派标准化函数：Crossref 数据走 `normalize_crossref_item` | `main.py` |
+| 每组拉取量降到 `per_page=100, max_pages=1`（5 组 = 5 个请求） | `main.py` |
+| 组间 `time.sleep(2)` | `main.py` |
+
+**修复后实测**：429 触发后退避重试成功取到数据；某组重试耗尽时 Crossref 兜底真正顶上（`标准化 30 → 过滤后 17`）。
+
+---
+
+## 零之二、主题分组轮换（2026-09-29 扩充）
+
+### 为什么分组而不是拼成一个大 query
+**实测：OpenAlex 的 `search` 参数里 OR 关键词超过约 20 个会超时**（32 词查询 34 秒后失败，25 词也失败）。
+所以把关键词拆成 7 个组，每组 ≤10 词，分别请求后本地合并。
+
+### 每日策略
+7 个组按日期轮换取 5 组、**每组 1 篇**：7 天一个完整周期，每组每周期出现 5 次。
+好处是不会连着几天全是同一主题。
+
+### 各组命中量（2026-09-28 实测：365 天窗口 / 10 本教育技术顶刊）
+
+| 组 | 词数 | 命中 | 抽样标题（真实） |
+|----|------|------|------------------|
+| 教育技术核心 | 10 | 456 | multimodal learning analytics |
+| AI 教育应用 | 8 | 299 | LLM-based Socratic conversational… |
+| 教师·师范教育 | 7 | 307 | Co-constructing adaptive lesson plans with GenAI: Pre-service… |
+| 协作与认知 | 7 | 327 | Students' interaction patterns of online dialogic peer feedback |
+| 学习科学教法 | 7 | 334 | metacognitive scaffolding-supported online… |
+| 技术学习形态 | 7 | 341 | student-AI interaction dynamics in multi-agent… |
+| 动机与情感 | 6 | 493 | Chinese EFL… / Mathematics Achievement… |
+
+> ⚠️ 「动机与情感」组泛词较多，抽样已出现与教育技术弱相关的文献（EFL、数学成就）。
+> 若觉得推送质量被稀释，把该组从 `TOPIC_GROUPS` 里删掉即可。
+
+> ⚠️ A+B+C 合并去重后的总数**未实测**（实测时自身触发 429）。粗估 800-1200，这是估算值。
 
 ---
 
