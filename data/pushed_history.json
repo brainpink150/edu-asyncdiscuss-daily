@@ -79,6 +79,7 @@
     "10.1007/s11423-026-10684-1",
     "10.1007/s11423-026-10693-0",
     "10.1007/s11423-026-10694-z",
+    "10.1007/s11423-026-10696-x",
     "10.1007/s11423-026-10697-w",
     "10.1007/s11423-026-10698-9",
     "10.1007/s11423-026-10699-8",
@@ -94,6 +95,7 @@
     "10.1007/s11423-026-10712-0",
     "10.1007/s11423-026-10713-z",
     "10.1007/s11423-026-10715-x",
+    "10.1007/s11423-026-10716-w",
     "10.1007/s11423-026-10722-y",
     "10.1007/s11423-026-10723-x",
     "10.1007/s11423-026-10724-w",
@@ -113,6 +115,7 @@
     "10.1007/s11423-026-10742-8",
     "10.1007/s11423-026-10743-7",
     "10.1007/s11423-026-10744-6",
+    "10.1007/s11423-026-10745-5",
     "10.1007/s11423-026-10746-4",
     "10.1016/j.compedu.2025.105472",
     "10.1016/j.compedu.2025.105485",
@@ -147,6 +150,7 @@
     "10.1016/j.compedu.2026.105767",
     "10.1016/j.compedu.2026.105768",
     "10.1016/j.compedu.2026.105769",
+    "10.1016/j.compedu.2026.105770",
     "10.1016/j.iheduc.2025.101058",
     "10.1016/j.iheduc.2026.101077",
     "10.1016/j.iheduc.2026.101088",
@@ -199,6 +203,7 @@
     "10.1111/bjet.70091",
     "10.1111/bjet.70092",
     "10.1111/bjet.70093",
+    "10.1111/bjet.70094",
     "10.1111/jcal.70153"
   ],
   "title_hashes": [
@@ -213,6 +218,7 @@
     "08daef7c986b313b7fe9f44c275ff8d37339401c",
     "0a4c79734b562d0c59051076b21a83d3c2880e5c",
     "0ad35445a314183c7b021dfbe175c69a4175e5c3",
+    "0ae1a03f6be9c68e8b4ce3c7db088e94e6e90fd3",
     "0e1b0c7928e8f357f9692826de2e99b8cdd00e47",
     "0e1e70e8219d7b55207f04df9521e402308a0617",
     "117614d2e3627772c5db3e87a68793e2eb65702d",
@@ -251,6 +257,7 @@
     "35ec1d9dc06b8ee5645411f13afe96423e36ce50",
     "38661111e683b1b39392eb1c85440a9e0d52be2d",
     "3b53ab4a8b4ede6418f866ee6d9deb64c43bbb37",
+    "3bb61ae9cecb5261d99c4bc43b96c6bd056e43b7",
     "3c09588a87e78078dbec6772042abd5e198ee990",
     "3cd90691dfce8f045447848819c7c4119dd21dab",
     "3ddf06d8e0b1c025e8e0d4bf89f22bac542e8125",
@@ -283,6 +290,7 @@
     "59c419670115f3bef6bbc26ac1f96aefb44f2f5f",
     "5a638e8e07495b1d0ca4a10131a25448b7201178",
     "5dbe3b387164d911d28edd934d4701bcce85424c",
+    "5e3bdda7197e535991880be27f22c663a551bab6",
     "5e3d9a0c76a53c7f814fb0eee2392f80a4a843f5",
     "5f3bf891bfa19aec9b5f00559f514f876cb7db1f",
     "61d31f3d84d91184ff86d8c5fa166d0633adae42",
@@ -383,6 +391,7 @@
     "d5b1e5b27458da74f08427cd61fbfb3b3381b777",
     "d8cf10e96cf71d0da41f5acefbe74467d8193462",
     "d9614763fffab9fb10594155cca91ba9305ddd78",
+    "dae238fe24d1c308613aab06afc972e9dc174839",
     "db05114e5be0f05941f53b98a58389b7ec5de2c9",
     "e096325dfdc12054192c8f157d7d2669d2152247",
     "e0e533eb5eae2d5493de7d0928069c8c211ce3cc",
@@ -390,6 +399,7 @@
     "e1adae0cb8147b61ddfc18234e4ea348bce6128d",
     "e268e494dacbed83405b80f67ee05783cbc48cab",
     "e27b02417e33e3d928682924154084b642dee95d",
+    "e5b2d71af97f22de875a5a052f3a90dc22eb7803",
     "e854a2a1d231cbb588dd69c8231a9d5a534e03ac",
     "e8b20c0edf6c086a612b811c9ab30efd7bf89b24",
     "eb23dfb26bbe0ae129fc1406ced9949357bf4471",
@@ -2273,7 +2283,62 @@
       "date": "2026-09-10",
       "cited_by_count": 0,
       "abstract": "ABSTRACT Background In recent years, Generative Artificial Intelligence (GenAI) has been increasingly adopted in higher education to support undergraduate learning. Despite its rapid integration into educational settings, the effects of GenAI on learning outcomes remain inconclusive owing to varying study designs and outcome measures. Objectives This study aims to synthesise empirical evidence on "
+    },
+    {
+      "_fp": "e5b2d71af97f22de875a5a052f3a90dc22eb7803",
+      "title": "Signals to remember: investigating the retrieval function of colors",
+      "doi": "10.1007/s11423-026-10745-5",
+      "url": "https://doi.org/10.1007/s11423-026-10745-5",
+      "authors": "Nadine Scheller, Cristina Tulea, Maik Beege, Felicia Meusel, Sascha Schneider",
+      "venue": "ETR&D",
+      "date": "2026-10-19",
+      "cited_by_count": 0,
+      "abstract": "Abstract Learners often rely on visual cues, such as color highlights, to recall important information in instructional texts. Color can serve as an attention-guidance cue but also a memory cue to promote learning. However, research has not yet thoroughly explored how colors can serve both purposes: signaling relevant information within the learning material and serving as memory cues to foster re"
+    },
+    {
+      "_fp": "3bb61ae9cecb5261d99c4bc43b96c6bd056e43b7",
+      "title": "Prompt‐based emotional scaffolding in generative AI : Effects on self‐regulated learning and socio‐emotional outcomes",
+      "doi": "10.1111/bjet.70094",
+      "url": "https://doi.org/10.1111/bjet.70094",
+      "authors": "Elena-Alexandra Diordiev, Valdemar Aksel Stenberdt, Guido Makransky",
+      "venue": "BJET",
+      "date": "2026-10-18",
+      "cited_by_count": 0,
+      "abstract": "Abstract While generative AI (GenAI) tools are emerging as educational resources, general‐purpose applications like ChatGPT are not explicitly designed to support the metacognitive and socio‐emotional dimensions of learning, often failing to address students' emotional states or promote independent thinking. In response, this study introduces a CVT‐SRL GenAI Support Framework integrating control‐v"
+    },
+    {
+      "_fp": "5e3bdda7197e535991880be27f22c663a551bab6",
+      "title": "Fifty Years of Computers & Education: Continuities, Transformations, and Diversification in Educational Technology Research",
+      "doi": "10.1016/j.compedu.2026.105770",
+      "url": "https://doi.org/10.1016/j.compedu.2026.105770",
+      "authors": "Miguél Nussbaum",
+      "venue": "C&E",
+      "date": "2026-10-01",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "0ae1a03f6be9c68e8b4ce3c7db088e94e6e90fd3",
+      "title": "AIgnite: an educational toolkit for supporting primary students’ AI literacy cultivation",
+      "doi": "10.1007/s11423-026-10716-w",
+      "url": "https://doi.org/10.1007/s11423-026-10716-w",
+      "authors": "Changjuan Ran, Mohan Zhang, Fang Liu, Biyao Li, Bingfeng Zhou",
+      "venue": "ETR&D",
+      "date": "2026-10-19",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "dae238fe24d1c308613aab06afc972e9dc174839",
+      "title": "From knowledge consumption to human-AI co-creation: an empirical study on GenAI-empowered engineering education",
+      "doi": "10.1007/s11423-026-10696-x",
+      "url": "https://doi.org/10.1007/s11423-026-10696-x",
+      "authors": "Liu Haitao",
+      "venue": "ETR&D",
+      "date": "2026-08-27",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-10-20T05:39:23.124975+00:00"
+  "last_updated": "2026-10-21T05:41:40.463836+00:00"
 }
