@@ -63,6 +63,7 @@
     "10.1002/jcal.70355",
     "10.1002/jcal.70356",
     "10.1002/jcal.70357",
+    "10.1002/jcal.70360",
     "10.1002/jcal.70361",
     "10.1007/s11423-025-10549-z",
     "10.1007/s11423-026-10603-4",
@@ -77,6 +78,7 @@
     "10.1007/s11423-026-10678-z",
     "10.1007/s11423-026-10683-2",
     "10.1007/s11423-026-10684-1",
+    "10.1007/s11423-026-10687-y",
     "10.1007/s11423-026-10693-0",
     "10.1007/s11423-026-10694-z",
     "10.1007/s11423-026-10696-x",
@@ -100,6 +102,7 @@
     "10.1007/s11423-026-10723-x",
     "10.1007/s11423-026-10724-w",
     "10.1007/s11423-026-10725-9",
+    "10.1007/s11423-026-10726-8",
     "10.1007/s11423-026-10727-7",
     "10.1007/s11423-026-10728-6",
     "10.1007/s11423-026-10730-y",
@@ -166,6 +169,7 @@
     "10.1016/j.learninstruc.2026.102449",
     "10.1016/j.learninstruc.2026.102451",
     "10.1016/j.learninstruc.2026.102459",
+    "10.1016/j.learninstruc.2026.102460",
     "10.1016/j.learninstruc.2026.102463",
     "10.1016/j.learninstruc.2026.102471",
     "10.1016/j.learninstruc.2026.102475",
@@ -204,6 +208,7 @@
     "10.1111/bjet.70092",
     "10.1111/bjet.70093",
     "10.1111/bjet.70094",
+    "10.1111/bjet.70096",
     "10.1111/jcal.70153"
   ],
   "title_hashes": [
@@ -212,6 +217,7 @@
     "0400e576b740eebcb323832cbe452bfbec841167",
     "0414fcdc58c2ca38f4c0f00a6e567af4cc68c967",
     "0495ba3167b3bfea6408eeaaa3b357c62d6ea40f",
+    "051f2201d3ab7fa279b5227320a919651cc40311",
     "078cc5dde6b5d2108c264f14858726e13c185d0f",
     "0868b204c61d7c3686ffdb406664d09532403f70",
     "089d506a116972080895095247e6986216bdac81",
@@ -221,6 +227,7 @@
     "0ae1a03f6be9c68e8b4ce3c7db088e94e6e90fd3",
     "0e1b0c7928e8f357f9692826de2e99b8cdd00e47",
     "0e1e70e8219d7b55207f04df9521e402308a0617",
+    "0ede04b2018c5319d69bd026a7dffea05f3894f8",
     "117614d2e3627772c5db3e87a68793e2eb65702d",
     "161a4a044afd0e65059c74b27d25b3e473d166bd",
     "170516dbb3ad698d432ee8f5381d0f3c4f5f0b02",
@@ -261,6 +268,7 @@
     "3c09588a87e78078dbec6772042abd5e198ee990",
     "3cd90691dfce8f045447848819c7c4119dd21dab",
     "3ddf06d8e0b1c025e8e0d4bf89f22bac542e8125",
+    "3fe70fb1a3c8dc22f93e9abd9a1deaa53e39b826",
     "4197d954dc5be384c2d68e356da62a1d80b712fb",
     "41a92e9e851db4aad979958a63ec66e1a38912cb",
     "452d2f111279661f6ac8a3e39a208b2649c9c492",
@@ -268,6 +276,7 @@
     "45c1ab2f37cc53cf6f841b20e7ff1f28cc3a85fa",
     "460890277dc05ac9c9facb1eb1fc9a996bd25833",
     "467fbee23d7a45e56b91e0a5d872e14e16b7fabe",
+    "4822d3f964edf7cfe11a6a1287806b214589cb0f",
     "4a696db450079726d0749e6124d3b33a93821991",
     "4aa78a34e8ab31b2198e5ef8f2bd2a7bc7aff05d",
     "4c1e849ae5c80e2085eaed6de570ea8e96449832",
@@ -307,6 +316,7 @@
     "6e9c8d1f94946baebb448186cd2ed3053f265fa5",
     "6ead812bc7e28ad73394113c197b71294d8a4940",
     "6eb798560401c2d0f56dd8a1c6883572ab951244",
+    "6ef576f2d61b6156dd5b6ceaa017747bbde9a75c",
     "70788c81cb9319029164dd4071a8d8ff28b71092",
     "711e4dfcb9d911bc3488a0a748c9c4f494027d4f",
     "716b0a1f1560f0874981d6c2ca6eaf3a77dcaf48",
@@ -2338,7 +2348,62 @@
       "date": "2026-08-27",
       "cited_by_count": 0,
       "abstract": ""
+    },
+    {
+      "_fp": "0ede04b2018c5319d69bd026a7dffea05f3894f8",
+      "title": "Generative AI as a team moderator in CSCL : Facilitating students' multidimensional engagement through adaptive scaffolding for socially shared regulation of learning",
+      "doi": "10.1111/bjet.70096",
+      "url": "https://doi.org/10.1111/bjet.70096",
+      "authors": "Dengkang Chen, Yi Zhang, Heng Luo, Fucheng Guo, Yijie Lu et al.",
+      "venue": "BJET",
+      "date": "2026-10-20",
+      "cited_by_count": 0,
+      "abstract": "Abstract Socially shared regulation of learning (SSRL) is essential for successful collaboration, yet effectively scaffolding it remains challenging because regulatory needs are dynamic and context‐dependent. While generative AI (GenAI) offers potential for adaptive support, current applications in collaborative learning largely position it as a content‐oriented tutor for knowledge explanation or "
+    },
+    {
+      "_fp": "4822d3f964edf7cfe11a6a1287806b214589cb0f",
+      "title": "Measuring cognitive presence in online discussions: automated detection and instructional insights from a MOOC context",
+      "doi": "10.1007/s11423-026-10726-8",
+      "url": "https://doi.org/10.1007/s11423-026-10726-8",
+      "authors": "Ji Hyun Yu, Fengjiao Tu, Haihua Chen, Junhua Ding, Chi-Jia Hsieh et al.",
+      "venue": "ETR&D",
+      "date": "2026-10-20",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "6ef576f2d61b6156dd5b6ceaa017747bbde9a75c",
+      "title": "Technology‐Supported Formative Assessment in Higher Education: AI , Learning Analytics and the Future of Assessment for Learning",
+      "doi": "10.1002/jcal.70360",
+      "url": "https://doi.org/10.1002/jcal.70360",
+      "authors": "Aydın Bulut",
+      "venue": "JCAL",
+      "date": "2026-10-19",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Purpose This study examines the intellectual and thematic development of technology‐supported formative assessment (TSFA) in higher education and its convergence with feedback, learning analytics, artificial intelligence (AI) and self‐regulation. Design/Methodology/Approach A scoping review integrating bibliometric mapping, qualitative thematic synthesis and SWOT analysis was conducted on"
+    },
+    {
+      "_fp": "051f2201d3ab7fa279b5227320a919651cc40311",
+      "title": "Do large language models stimulate student motivation? A meta-analysis of experimental studies",
+      "doi": "10.1007/s11423-026-10687-y",
+      "url": "https://doi.org/10.1007/s11423-026-10687-y",
+      "authors": "Xiaoli Han, Mingzhuo Liu",
+      "venue": "ETR&D",
+      "date": "2026-08-29",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "3fe70fb1a3c8dc22f93e9abd9a1deaa53e39b826",
+      "title": "Peer instruction in chemistry stratified exercises: Cognitive and metacognitive effects",
+      "doi": "10.1016/j.learninstruc.2026.102460",
+      "url": "https://doi.org/10.1016/j.learninstruc.2026.102460",
+      "authors": "Yanfang Zheng, Xiangyi Wang, Yuting Zhang, Huang Mei",
+      "venue": "L&I",
+      "date": "2026-08-29",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-10-21T05:41:40.463836+00:00"
+  "last_updated": "2026-10-22T05:44:12.153425+00:00"
 }
