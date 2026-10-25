@@ -90,6 +90,7 @@
     "10.1007/s11423-026-10698-9",
     "10.1007/s11423-026-10699-8",
     "10.1007/s11423-026-10700-4",
+    "10.1007/s11423-026-10701-3",
     "10.1007/s11423-026-10702-2",
     "10.1007/s11423-026-10703-1",
     "10.1007/s11423-026-10704-0",
@@ -141,6 +142,7 @@
     "10.1016/j.compedu.2026.105742",
     "10.1016/j.compedu.2026.105743",
     "10.1016/j.compedu.2026.105745",
+    "10.1016/j.compedu.2026.105746",
     "10.1016/j.compedu.2026.105747",
     "10.1016/j.compedu.2026.105748",
     "10.1016/j.compedu.2026.105749",
@@ -189,6 +191,7 @@
     "10.1016/j.learninstruc.2026.102481",
     "10.1016/j.learninstruc.2026.102482",
     "10.1016/j.learninstruc.2026.102483",
+    "10.1016/j.learninstruc.2026.102484",
     "10.1016/j.learninstruc.2026.102485",
     "10.1016/j.learninstruc.2026.102486",
     "10.1016/j.learninstruc.2026.102487",
@@ -334,6 +337,7 @@
     "70788c81cb9319029164dd4071a8d8ff28b71092",
     "711e4dfcb9d911bc3488a0a748c9c4f494027d4f",
     "716b0a1f1560f0874981d6c2ca6eaf3a77dcaf48",
+    "73fba77dd7d54eaaf06af2fca9845b92af607bc5",
     "7650f847d962a4e020d771216d46e06584f2119d",
     "776836051fa718c6c24a2dbcf5a6e39a43a9dae9",
     "77be568fcfcbeb442b669446ce59ca3ef8b09086",
@@ -362,6 +366,7 @@
     "91b2c614baa17cbf4058644cb62234c49c3a904c",
     "967d12f455860a820eb805fa2b81579fa256d54a",
     "9788f65e0edf9b0adc4b6aab7cf5b27b26cfb531",
+    "97b94b235fb701f27861683a9ac676c83788fd46",
     "97bebda28bda0a6423dc74d123958302ac102640",
     "99aa1255f90238d98be645619519f894b1368116",
     "9a2a60771cf67e1b2b80538aaf7603f3080e893a",
@@ -404,6 +409,7 @@
     "c640705fff746dd48d159059c37539232717e446",
     "c693dc69bb05412f12ca4af7e27b4ebcfcb2da40",
     "c6a4217729cebfdfb2f06e5a518e591987d5efdc",
+    "c7c99c64b51b943e0cbbe870a00168ece9b6f777",
     "c828ff0ebb643865e788da603dc196d1b0825e0d",
     "cbd60f8c8ecf5787bcd2a29bbea4afe586f0cae4",
     "cc52c26fb41f7b9bb342d6d9f1915179e4a758ad",
@@ -2533,7 +2539,40 @@
       "date": "2026-08-20",
       "cited_by_count": 0,
       "abstract": ""
+    },
+    {
+      "_fp": "97b94b235fb701f27861683a9ac676c83788fd46",
+      "title": "Teaching by example? Teacher ICT use and middle school students’ computer and information literacy across China and the United States",
+      "doi": "10.1016/j.learninstruc.2026.102484",
+      "url": "https://doi.org/10.1016/j.learninstruc.2026.102484",
+      "authors": "Zheng Li",
+      "venue": "L&I",
+      "date": "2026-10-19",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "c7c99c64b51b943e0cbbe870a00168ece9b6f777",
+      "title": "A five-study design-based research approach to co-design an institutional AI digital assistant",
+      "doi": "10.1016/j.compedu.2026.105746",
+      "url": "https://doi.org/10.1016/j.compedu.2026.105746",
+      "authors": "Bart Rienties, Duygu Bektik, Emily Coughlan, Tim Coughlan, John Domingue et al.",
+      "venue": "C&E",
+      "date": "2026-09-01",
+      "cited_by_count": 0,
+      "abstract": "We report on a Design-Based Research (DBR) study that was conducted over a 13-month period to develop an institutional AI digital assistant (i-AIDA). Many students already use publicly available AI Digital Assistants (p-AIDA) like ChatGPT for academic purposes. However, there are concerns around the use of such p-AIDA tools, particularly in terms of academic integrity, data privacy, intellectual p"
+    },
+    {
+      "_fp": "73fba77dd7d54eaaf06af2fca9845b92af607bc5",
+      "title": "Adaptive dialogic feedback in AI-enhanced serious games: examining effects on motivation and learning processes in digital literacy education",
+      "doi": "10.1007/s11423-026-10701-3",
+      "url": "https://doi.org/10.1007/s11423-026-10701-3",
+      "authors": "Kannikar Intawong, Phimphakan Thongthip, Perasuk Worragin, Kitti Puritat",
+      "venue": "ETR&D",
+      "date": "2026-08-22",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-10-24T05:21:45.677610+00:00"
+  "last_updated": "2026-10-25T05:38:24.742324+00:00"
 }
