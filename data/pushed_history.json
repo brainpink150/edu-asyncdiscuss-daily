@@ -186,6 +186,7 @@
     "10.1016/j.learninstruc.2026.102475",
     "10.1016/j.learninstruc.2026.102476",
     "10.1016/j.learninstruc.2026.102477",
+    "10.1016/j.learninstruc.2026.102478",
     "10.1016/j.learninstruc.2026.102479",
     "10.1016/j.learninstruc.2026.102480",
     "10.1016/j.learninstruc.2026.102481",
@@ -342,6 +343,7 @@
     "776836051fa718c6c24a2dbcf5a6e39a43a9dae9",
     "77be568fcfcbeb442b669446ce59ca3ef8b09086",
     "7aaa4247f0e4e1ae971cc6d7d08245ad85d74f6e",
+    "7b8504773dbf1a060ae0203f260fe5c4609d5e33",
     "7b8d294839a1c1185183af10ce0f70dccb204ca1",
     "7d09a8bcdd8caa23378aabdbf4693bb60d9cb335",
     "7daa045a4c3d50e97130177aa20c374768e6e9fa",
@@ -2572,7 +2574,18 @@
       "date": "2026-08-22",
       "cited_by_count": 0,
       "abstract": ""
+    },
+    {
+      "_fp": "7b8504773dbf1a060ae0203f260fe5c4609d5e33",
+      "title": "The power of varying more than one thing at a time",
+      "doi": "10.1016/j.learninstruc.2026.102478",
+      "url": "https://doi.org/10.1016/j.learninstruc.2026.102478",
+      "authors": "Lucas Lörch, Elizabeth Baraff Bonawitz, Garvin Brod",
+      "venue": "L&I",
+      "date": "2026-09-23",
+      "cited_by_count": 0,
+      "abstract": "Background Varying one thing at a time (VOTAT) is considered a universal approach for designing informative experiments. Its core idea is that controlled experiments can be designed by manipulating a single variable. However, we show that this single-manipulation heuristic can produce misleading evidence in contexts involving interrelated variables. We argue that varying more than one thing at a t"
     }
   ],
-  "last_updated": "2026-10-25T05:38:24.742324+00:00"
+  "last_updated": "2026-10-26T05:45:03.069966+00:00"
 }
