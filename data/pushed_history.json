@@ -101,6 +101,7 @@
     "10.1007/s11423-026-10711-1",
     "10.1007/s11423-026-10712-0",
     "10.1007/s11423-026-10713-z",
+    "10.1007/s11423-026-10714-y",
     "10.1007/s11423-026-10715-x",
     "10.1007/s11423-026-10716-w",
     "10.1007/s11423-026-10719-7",
@@ -243,6 +244,7 @@
     "0e1e70e8219d7b55207f04df9521e402308a0617",
     "0ede04b2018c5319d69bd026a7dffea05f3894f8",
     "117614d2e3627772c5db3e87a68793e2eb65702d",
+    "12579c1f082dc983dcf1bd3ae1fc16cf2c9b02f1",
     "161a4a044afd0e65059c74b27d25b3e473d166bd",
     "170516dbb3ad698d432ee8f5381d0f3c4f5f0b02",
     "1797dadd6d9b631a953a0209ca6682b85dc55bb4",
@@ -2585,7 +2587,18 @@
       "date": "2026-09-23",
       "cited_by_count": 0,
       "abstract": "Background Varying one thing at a time (VOTAT) is considered a universal approach for designing informative experiments. Its core idea is that controlled experiments can be designed by manipulating a single variable. However, we show that this single-manipulation heuristic can produce misleading evidence in contexts involving interrelated variables. We argue that varying more than one thing at a t"
+    },
+    {
+      "_fp": "12579c1f082dc983dcf1bd3ae1fc16cf2c9b02f1",
+      "title": "Finger tracing or stylus tracing? Investigating the tracing effect on a computer screen",
+      "doi": "10.1007/s11423-026-10714-y",
+      "url": "https://doi.org/10.1007/s11423-026-10714-y",
+      "authors": "Lijia Lin",
+      "venue": "ETR&D",
+      "date": "2026-09-15",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-10-26T05:45:03.069966+00:00"
+  "last_updated": "2026-10-27T05:58:02.928110+00:00"
 }
