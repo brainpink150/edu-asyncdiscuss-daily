@@ -130,6 +130,7 @@
     "10.1007/s11423-026-10744-6",
     "10.1007/s11423-026-10745-5",
     "10.1007/s11423-026-10746-4",
+    "10.1007/s11423-026-10752-6",
     "10.1016/j.compedu.2025.105472",
     "10.1016/j.compedu.2025.105485",
     "10.1016/j.compedu.2025.105492",
@@ -201,6 +202,7 @@
     "10.1016/j.learninstruc.2026.102490",
     "10.1016/j.learninstruc.2026.102491",
     "10.1016/j.learninstruc.2026.102494",
+    "10.1016/j.learninstruc.2026.102501",
     "10.1080/08923647.2026.2715218",
     "10.1080/08923647.2026.2719280",
     "10.1080/08923647.2026.2724654",
@@ -223,6 +225,7 @@
     "10.1111/bjet.70092",
     "10.1111/bjet.70093",
     "10.1111/bjet.70094",
+    "10.1111/bjet.70095",
     "10.1111/bjet.70096",
     "10.1111/jcal.70153"
   ],
@@ -282,6 +285,7 @@
     "347fb60c28f5d77599226c2bba8a2b1a18c7a0ac",
     "35ec1d9dc06b8ee5645411f13afe96423e36ce50",
     "38661111e683b1b39392eb1c85440a9e0d52be2d",
+    "3b292967c27b2941bb8234e0d1753cd2b223bde5",
     "3b53ab4a8b4ede6418f866ee6d9deb64c43bbb37",
     "3bb61ae9cecb5261d99c4bc43b96c6bd056e43b7",
     "3c09588a87e78078dbec6772042abd5e198ee990",
@@ -388,11 +392,13 @@
     "a2a530cf23a2b398252f46d2ff9d09d79f8d4ee4",
     "a31b87c0bd55276c16c22db235b5c73a507f91e3",
     "a44a03ba72fa70beb44452804272acc735d1e53c",
+    "a6ac63e6f01a1735c1f86e945585940f0e983e15",
     "a88954c360346d69e1a8386d1876835b6a6fa199",
     "a8d7b36df59330bc4030fb42f6a33f742ba2174d",
     "aa367e72073f3cb086a50670ee0c6807e3507424",
     "aa6f8683b9c747f85dbb50cbb4177eeadb73938a",
     "abef5c8196bfbc803615fb485673730c92154b17",
+    "ac27b3f58ea0c04036f85c98af3b424198c93ff5",
     "ac5a0f214e6a82d469410e26a0a29ecf0564bf62",
     "b041e798ca092584fce8c6d8e4c615fe3f4362dc",
     "b05132ecd422f00f0520427022340f91957bb782",
@@ -2598,7 +2604,40 @@
       "date": "2026-09-15",
       "cited_by_count": 0,
       "abstract": ""
+    },
+    {
+      "_fp": "ac27b3f58ea0c04036f85c98af3b424198c93ff5",
+      "title": "A five-dimensional framework for AI literacy in higher education: a human-in-the-loop computational meta-synthesis",
+      "doi": "10.1007/s11423-026-10752-6",
+      "url": "https://doi.org/10.1007/s11423-026-10752-6",
+      "authors": "Jingjing Zhang, Shuwen Wang, Yicheng Huang, Lishan Zhang",
+      "venue": "ETR&D",
+      "date": "2026-10-26",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "3b292967c27b2941bb8234e0d1753cd2b223bde5",
+      "title": "GenAI ‐based metacognitive prompting in collaborative inquiry: A comparison across diverse preconception groups",
+      "doi": "10.1111/bjet.70095",
+      "url": "https://doi.org/10.1111/bjet.70095",
+      "authors": "Mengke Wang, Joni Lämsä, Márta Sobocinski, Justin Edwards, Ridwan Whitehead et al.",
+      "venue": "BJET",
+      "date": "2026-10-25",
+      "cited_by_count": 0,
+      "abstract": "Abstract Generative AI (GenAI) is increasingly integrated into collaborative inquiry to provide metacognitive prompting that scaffolds socially shared regulation of learning (SSRL). Understanding how such GenAI‐based metacognitive prompting is taken up through student–GenAI interactions is therefore critical. However, although learner–GenAI interaction processes have been widely examined, little i"
+    },
+    {
+      "_fp": "a6ac63e6f01a1735c1f86e945585940f0e983e15",
+      "title": "Seeing what matters: How signaling influences teachers’ noticing of classroom disruptions in scripted classroom videos",
+      "doi": "10.1016/j.learninstruc.2026.102501",
+      "url": "https://doi.org/10.1016/j.learninstruc.2026.102501",
+      "authors": "Isabel Althen, Jessica Fischer, Martin Merkt",
+      "venue": "L&I",
+      "date": "2026-10-26",
+      "cited_by_count": 0,
+      "abstract": "Background Noticing describes teachers’ ability to perceive and interpret relevant events. Regarding classroom management, noticing disruptions is particularly relevant. However, many teachers often misinterpret disruptions, perceive them too late, or not at all. While classroom videos can be an effective way to train noticing, they are often overwhelming and therefore less effective. Aims This st"
     }
   ],
-  "last_updated": "2026-10-27T05:58:02.928110+00:00"
+  "last_updated": "2026-10-28T06:36:17.853491+00:00"
 }
