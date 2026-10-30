@@ -168,6 +168,7 @@
     "10.1016/j.compedu.2026.105768",
     "10.1016/j.compedu.2026.105769",
     "10.1016/j.compedu.2026.105770",
+    "10.1016/j.compedu.2026.105771",
     "10.1016/j.compedu.2026.105773",
     "10.1016/j.iheduc.2025.101058",
     "10.1016/j.iheduc.2026.101077",
@@ -329,6 +330,7 @@
     "59c419670115f3bef6bbc26ac1f96aefb44f2f5f",
     "5a638e8e07495b1d0ca4a10131a25448b7201178",
     "5dbe3b387164d911d28edd934d4701bcce85424c",
+    "5e083eb7babc3244e5f418980441137bb91ce22f",
     "5e3bdda7197e535991880be27f22c663a551bab6",
     "5e3d9a0c76a53c7f814fb0eee2392f80a4a843f5",
     "5f3bf891bfa19aec9b5f00559f514f876cb7db1f",
@@ -2702,7 +2704,18 @@
       "date": "2026-10-01",
       "cited_by_count": 0,
       "abstract": ""
+    },
+    {
+      "_fp": "5e083eb7babc3244e5f418980441137bb91ce22f",
+      "title": "Uncovering emotion dynamics across human–AI interaction modes in programming: Evidence from facial expression and electrodermal activity",
+      "doi": "10.1016/j.compedu.2026.105771",
+      "url": "https://doi.org/10.1016/j.compedu.2026.105771",
+      "authors": "Tianlong Zhong, Gaoxia Zhu",
+      "venue": "C&E",
+      "date": "2026-10-20",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-10-29T06:44:16.093613+00:00"
+  "last_updated": "2026-10-30T06:45:11.771799+00:00"
 }
