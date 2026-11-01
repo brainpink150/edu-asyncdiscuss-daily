@@ -69,8 +69,10 @@
     "10.1002/jcal.70359",
     "10.1002/jcal.70360",
     "10.1002/jcal.70361",
+    "10.1002/jcal.70362",
     "10.1002/jcal.70363",
     "10.1002/jcal.70364",
+    "10.1002/jcal.70367",
     "10.1007/s11423-025-10549-z",
     "10.1007/s11423-026-10603-4",
     "10.1007/s11423-026-10635-w",
@@ -256,6 +258,7 @@
     "0e1b0c7928e8f357f9692826de2e99b8cdd00e47",
     "0e1e70e8219d7b55207f04df9521e402308a0617",
     "0ede04b2018c5319d69bd026a7dffea05f3894f8",
+    "0f5b7868fd0793809c5b269c61f396d23fbafcf3",
     "117614d2e3627772c5db3e87a68793e2eb65702d",
     "12579c1f082dc983dcf1bd3ae1fc16cf2c9b02f1",
     "161a4a044afd0e65059c74b27d25b3e473d166bd",
@@ -360,6 +363,7 @@
     "70788c81cb9319029164dd4071a8d8ff28b71092",
     "711e4dfcb9d911bc3488a0a748c9c4f494027d4f",
     "716b0a1f1560f0874981d6c2ca6eaf3a77dcaf48",
+    "71f25b1c68b606202ffd8997bfc0b342e7fa8e38",
     "73fba77dd7d54eaaf06af2fca9845b92af607bc5",
     "74e8c166a18fa195ae6527bfb3ad663717ff851a",
     "7650f847d962a4e020d771216d46e06584f2119d",
@@ -2767,7 +2771,29 @@
       "date": "2026-10-28",
       "cited_by_count": 0,
       "abstract": ""
+    },
+    {
+      "_fp": "71f25b1c68b606202ffd8997bfc0b342e7fa8e38",
+      "title": "From Design to Classroom Adoption: Teachers' Perspectives on AI‐powered Writing Analytics in Resource‐Constrained Contexts",
+      "doi": "10.1002/jcal.70362",
+      "url": "https://doi.org/10.1002/jcal.70362",
+      "authors": "Fabíola Gonçalves Coelho Ribeiro, Luiz Rodrigues, Cleon Xavier, Newarney Torrezão da Costa, Anderson Pinheiro Cavalcanti et al.",
+      "venue": "JCAL",
+      "date": "2026-10-30",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background The adoption of automated tools to support teaching and learning processes has been widely discussed in the literature. However, there remains a need for user‐oriented designs that better align with teachers' practices and classroom realities while providing actionable insights to support instructional choices in authentic educational settings. Objectives This study aims to sys"
+    },
+    {
+      "_fp": "0f5b7868fd0793809c5b269c61f396d23fbafcf3",
+      "title": "Beyond Access: How GenAI Literacy Relates to Task Performance, Motivation, Cognitive Load and Interaction Patterns in AI ‐Assisted Learning Environment",
+      "doi": "10.1002/jcal.70367",
+      "url": "https://doi.org/10.1002/jcal.70367",
+      "authors": "Angxuan Chen, Huaiya Liu, Chunlei Ren, Jingjing LIAN, Jiyou Jia",
+      "venue": "JCAL",
+      "date": "2026-10-30",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background Generative AI is rapidly being integrated into educational settings, yet equitable benefits depend heavily on students' GenAI literacy. While access to these tools is increasing, empirical evidence remains limited on how specific dimensions of assessed GenAI literacy relate to students' task performance, cognitive experiences, and actual interactional behaviours during learning"
     }
   ],
-  "last_updated": "2026-10-31T06:36:00.442420+00:00"
+  "last_updated": "2026-11-01T07:06:26.480116+00:00"
 }
