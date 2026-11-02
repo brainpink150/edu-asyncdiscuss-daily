@@ -73,6 +73,7 @@
     "10.1002/jcal.70363",
     "10.1002/jcal.70364",
     "10.1002/jcal.70367",
+    "10.1002/jcal.70368",
     "10.1007/s11423-025-10549-z",
     "10.1007/s11423-026-10603-4",
     "10.1007/s11423-026-10635-w",
@@ -370,6 +371,7 @@
     "776836051fa718c6c24a2dbcf5a6e39a43a9dae9",
     "77be568fcfcbeb442b669446ce59ca3ef8b09086",
     "7aaa4247f0e4e1ae971cc6d7d08245ad85d74f6e",
+    "7abe0e7507ecc6ee40cdbbdde8f011dd1d130934",
     "7b8504773dbf1a060ae0203f260fe5c4609d5e33",
     "7b8d294839a1c1185183af10ce0f70dccb204ca1",
     "7d09a8bcdd8caa23378aabdbf4693bb60d9cb335",
@@ -2793,7 +2795,18 @@
       "date": "2026-10-30",
       "cited_by_count": 0,
       "abstract": "ABSTRACT Background Generative AI is rapidly being integrated into educational settings, yet equitable benefits depend heavily on students' GenAI literacy. While access to these tools is increasing, empirical evidence remains limited on how specific dimensions of assessed GenAI literacy relate to students' task performance, cognitive experiences, and actual interactional behaviours during learning"
+    },
+    {
+      "_fp": "7abe0e7507ecc6ee40cdbbdde8f011dd1d130934",
+      "title": "ChatGPT ‐Supported Literary Translation: Tense Accuracy and Dynamic Emotion Profiles in the Language Classroom",
+      "doi": "10.1002/jcal.70368",
+      "url": "https://doi.org/10.1002/jcal.70368",
+      "authors": "Mariusz Kruk, Agnieszka Kałużna, Xian Zhao",
+      "venue": "JCAL",
+      "date": "2026-10-30",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background Generative artificial intelligence can facilitate task completion, but whether it improves learning or consistently shapes task‐related emotions remains unclear. Objectives This mixed‐methods classroom study compared literary translation with ChatGPT access, translation with dictionary access and optional teacher assistance and regular instruction, focusing on tense accuracy an"
     }
   ],
-  "last_updated": "2026-11-01T07:06:26.480116+00:00"
+  "last_updated": "2026-11-02T07:11:11.246631+00:00"
 }
