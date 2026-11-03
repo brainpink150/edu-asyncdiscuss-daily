@@ -215,6 +215,8 @@
     "10.1016/j.learninstruc.2026.102494",
     "10.1016/j.learninstruc.2026.102496",
     "10.1016/j.learninstruc.2026.102501",
+    "10.1016/j.learninstruc.2026.102502",
+    "10.1016/j.learninstruc.2026.102503",
     "10.1080/08923647.2026.2715218",
     "10.1080/08923647.2026.2719280",
     "10.1080/08923647.2026.2724654",
@@ -319,6 +321,7 @@
     "4822d3f964edf7cfe11a6a1287806b214589cb0f",
     "4a696db450079726d0749e6124d3b33a93821991",
     "4aa78a34e8ab31b2198e5ef8f2bd2a7bc7aff05d",
+    "4bb483df0133296c9d0c343ce7d84c9217fcfc7a",
     "4c1e849ae5c80e2085eaed6de570ea8e96449832",
     "4d216f44e00af20fccd6b6dedb96da716de0c73e",
     "4d29fac159ca233b7854dae2a5a35dd26ad6eacf",
@@ -394,6 +397,7 @@
     "8cbb64712ff2b1ec9e4344c28d90c0222a186e50",
     "8cfe2acffac5c05dcaf644e96328b74a5eb7ce2a",
     "8d23c6af6606d8332edf0e292a596eeef7e31bf1",
+    "8e8056c3c51163ef7999a6c1ed84de98dcd3bfff",
     "902785c031596e1b98d15a42c562efbb3ca133d6",
     "91a8a5cf9a1e63a6dbef7644a0c0846112b7a758",
     "91b2c614baa17cbf4058644cb62234c49c3a904c",
@@ -2806,7 +2810,29 @@
       "date": "2026-10-30",
       "cited_by_count": 0,
       "abstract": "ABSTRACT Background Generative artificial intelligence can facilitate task completion, but whether it improves learning or consistently shapes task‐related emotions remains unclear. Objectives This mixed‐methods classroom study compared literary translation with ChatGPT access, translation with dictionary access and optional teacher assistance and regular instruction, focusing on tense accuracy an"
+    },
+    {
+      "_fp": "8e8056c3c51163ef7999a6c1ed84de98dcd3bfff",
+      "title": "Key arithmetic word problems to assess children's understanding",
+      "doi": "10.1016/j.learninstruc.2026.102502",
+      "url": "https://doi.org/10.1016/j.learninstruc.2026.102502",
+      "authors": "Jeanne Bagnoud, Emmanuel Sander",
+      "venue": "L&I",
+      "date": "2026-10-30",
+      "cited_by_count": 0,
+      "abstract": "Structured abstract Background Solving arithmetic word problems is an essential mathematical skill that many children find challenging. The difficulty often depends on how well the problem framing aligns with children's prior knowledge, which can either support or hinder its interpretation. The ability to extract meaningful information even from counterintuitive problems indicates a profound under"
+    },
+    {
+      "_fp": "4bb483df0133296c9d0c343ce7d84c9217fcfc7a",
+      "title": "Unveiling gendered participation dynamics in collaborative group work through transition network analysis",
+      "doi": "10.1016/j.learninstruc.2026.102503",
+      "url": "https://doi.org/10.1016/j.learninstruc.2026.102503",
+      "authors": "Jingoo Kang, Stephen Adofo, Jori Manner, Mohammed Saqr",
+      "venue": "L&I",
+      "date": "2026-11-01",
+      "cited_by_count": 0,
+      "abstract": "Background Collaborative group work in education plays a critical role in fostering students’ cognitive reasoning and socio-emotional development. However, research has consistently reported gender-based disparities in group participation, particularly during open-ended inquiry tasks. Aims This study aims to explore how gender influences students’ participation patterns in science group work and t"
     }
   ],
-  "last_updated": "2026-11-02T07:11:11.246631+00:00"
+  "last_updated": "2026-11-03T07:31:51.652639+00:00"
 }
