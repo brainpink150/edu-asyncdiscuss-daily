@@ -139,6 +139,7 @@
     "10.1007/s11423-026-10746-4",
     "10.1007/s11423-026-10751-7",
     "10.1007/s11423-026-10752-6",
+    "10.1007/s11423-026-10756-2",
     "10.1016/j.compedu.2025.105472",
     "10.1016/j.compedu.2025.105485",
     "10.1016/j.compedu.2025.105492",
@@ -288,6 +289,7 @@
     "293372c3a68890718dfa76fbe208927b344b9ae3",
     "298c0eadd8532020f18ad2e39b492789a016db86",
     "2b9627ce08b0560683b87fc0f3a1903f1e68c22d",
+    "2c221238b8aad22c6540b34c2dc18b087e8e273a",
     "2cb062f96caa4744e497980bedce1c66eedb0873",
     "2ccf1a2defa555dae746b0738ad99832e659ee04",
     "2cda43a3a22cbf57e9412e8792ac83a11650f2b4",
@@ -2832,7 +2834,18 @@
       "date": "2026-11-01",
       "cited_by_count": 0,
       "abstract": "Background Collaborative group work in education plays a critical role in fostering students’ cognitive reasoning and socio-emotional development. However, research has consistently reported gender-based disparities in group participation, particularly during open-ended inquiry tasks. Aims This study aims to explore how gender influences students’ participation patterns in science group work and t"
+    },
+    {
+      "_fp": "2c221238b8aad22c6540b34c2dc18b087e8e273a",
+      "title": "Should there be a teacher in-the-loop? A study of generative AI-personalized tasks middle school",
+      "doi": "10.1007/s11423-026-10756-2",
+      "url": "https://doi.org/10.1007/s11423-026-10756-2",
+      "authors": "Candace Walkington, Mingyu Feng, Itffini Pruitt-Britton, Theodora Beauchamp, Andrew Lan",
+      "venue": "ETR&D",
+      "date": "2026-11-02",
+      "cited_by_count": 0,
+      "abstract": "Abstract Large language models can be used to design instructional tasks to align to students’ needs. These generative AI models can create tasks that correspond to students’ out-of-school interests in areas like sports or music, which may enhance students’ interest in learning. However, little is known about teachers’ processes for creating or modifying tasks with generative AI, despite commercia"
     }
   ],
-  "last_updated": "2026-11-03T07:31:51.652639+00:00"
+  "last_updated": "2026-11-04T07:13:27.020455+00:00"
 }
