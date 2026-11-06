@@ -138,6 +138,7 @@
     "10.1007/s11423-026-10744-6",
     "10.1007/s11423-026-10745-5",
     "10.1007/s11423-026-10746-4",
+    "10.1007/s11423-026-10748-2",
     "10.1007/s11423-026-10751-7",
     "10.1007/s11423-026-10752-6",
     "10.1007/s11423-026-10756-2",
@@ -393,6 +394,7 @@
     "7ebc105bcc3ecb781e335ed291d0b0816f0d4d5c",
     "7f42b59b5250cc69bf2a9e0ae0a55db1ba536082",
     "7ff3b2f42bdc8060aa2c3f49efd1a3eaa03d0f2c",
+    "81e24a689c32ef90cee9763ae70a82450ad8f09b",
     "86d8289940a70915b3bfeb2e4891e876aed6e6fd",
     "86ebe69c1bcd8e11c0897c4f5b007cd8c99cc684",
     "8762231c31e524875093b3cabc8ca18fa2bc183b",
@@ -2910,7 +2912,18 @@
       "date": "2027-01",
       "cited_by_count": 0,
       "abstract": ""
+    },
+    {
+      "_fp": "81e24a689c32ef90cee9763ae70a82450ad8f09b",
+      "title": "A cognitive theory of accessibility: implications for research and practice",
+      "doi": "10.1007/s11423-026-10748-2",
+      "url": "https://doi.org/10.1007/s11423-026-10748-2",
+      "authors": "Stephanie L. Moore",
+      "venue": "ETR&D",
+      "date": "2026-11-03",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-11-05T07:42:51.505656+00:00"
+  "last_updated": "2026-11-06T07:38:07.766060+00:00"
 }
