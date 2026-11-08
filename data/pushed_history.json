@@ -77,6 +77,7 @@
     "10.1002/jcal.70368",
     "10.1002/jcal.70369",
     "10.1002/jcal.70371",
+    "10.1002/jcal.70374",
     "10.1007/s11423-025-10549-z",
     "10.1007/s11423-026-10603-4",
     "10.1007/s11423-026-10635-w",
@@ -144,6 +145,7 @@
     "10.1007/s11423-026-10751-7",
     "10.1007/s11423-026-10752-6",
     "10.1007/s11423-026-10756-2",
+    "10.1007/s11423-026-10759-z",
     "10.1016/j.compedu.2025.105472",
     "10.1016/j.compedu.2025.105485",
     "10.1016/j.compedu.2025.105492",
@@ -321,6 +323,7 @@
     "3489993c61a432397123f66ec7fc961b4a877f81",
     "35ec1d9dc06b8ee5645411f13afe96423e36ce50",
     "38661111e683b1b39392eb1c85440a9e0d52be2d",
+    "3abc64b0d2f6ea5823956996a58ecc41eeb088a7",
     "3b292967c27b2941bb8234e0d1753cd2b223bde5",
     "3b53ab4a8b4ede6418f866ee6d9deb64c43bbb37",
     "3bb61ae9cecb5261d99c4bc43b96c6bd056e43b7",
@@ -448,6 +451,7 @@
     "abef5c8196bfbc803615fb485673730c92154b17",
     "ac27b3f58ea0c04036f85c98af3b424198c93ff5",
     "ac5a0f214e6a82d469410e26a0a29ecf0564bf62",
+    "adf3e1df56cf25b14c094a850c427e2d4dad744c",
     "b041e798ca092584fce8c6d8e4c615fe3f4362dc",
     "b05132ecd422f00f0520427022340f91957bb782",
     "b0af0db37014c505e0bf97e80aa4abc591767a5d",
@@ -2988,7 +2992,29 @@
       "date": "2026-09-13",
       "cited_by_count": 0,
       "abstract": "ABSTRACT Background As computational thinking (CT) becomes an essential component of early childhood education, there is a growing demand for valid and developmentally appropriate assessment tools. Yet, while the availability of assessments has increased, researchers have yet to establish psychometric rigour and fairness in assessment design and implementation. Objectives This systematic review sy"
+    },
+    {
+      "_fp": "3abc64b0d2f6ea5823956996a58ecc41eeb088a7",
+      "title": "To chat or not to chat? Incorporating GenAI chatbot into flipped classroom to enhance learners’ task engagement",
+      "doi": "10.1007/s11423-026-10759-z",
+      "url": "https://doi.org/10.1007/s11423-026-10759-z",
+      "authors": "Zhiyong Li, Jie Bao",
+      "venue": "ETR&D",
+      "date": "2026-11-06",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "adf3e1df56cf25b14c094a850c427e2d4dad744c",
+      "title": "Impacts of AI ‐Generated Learning Videos on Learning Outcomes: The Mediating Roles of Perceived Desirability and Perceived Feasibility",
+      "doi": "10.1002/jcal.70374",
+      "url": "https://doi.org/10.1002/jcal.70374",
+      "authors": "Shang Shanshan, Chen Hong, Xiao‐Yue You",
+      "venue": "JCAL",
+      "date": "2026-11-06",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background In recent educational research and practice, there has been growing attention to the use and impact of generative AI technologies, with most studies focusing on AI‐generated textual content. However, relatively little is known about AI‐generated learning videos, despite their potential to significantly influence learners' experiences and outcomes. Objectives Drawing on situatio"
     }
   ],
-  "last_updated": "2026-11-07T06:48:47.023985+00:00"
+  "last_updated": "2026-11-08T06:54:50.646381+00:00"
 }
