@@ -144,8 +144,10 @@
     "10.1007/s11423-026-10748-2",
     "10.1007/s11423-026-10751-7",
     "10.1007/s11423-026-10752-6",
+    "10.1007/s11423-026-10755-3",
     "10.1007/s11423-026-10756-2",
     "10.1007/s11423-026-10759-z",
+    "10.1007/s11423-026-10762-4",
     "10.1016/j.compedu.2025.105472",
     "10.1016/j.compedu.2025.105485",
     "10.1016/j.compedu.2025.105492",
@@ -256,6 +258,7 @@
     "10.1111/bjet.70094",
     "10.1111/bjet.70095",
     "10.1111/bjet.70096",
+    "10.1111/bjet.70098",
     "10.1111/jcal.70153"
   ],
   "title_hashes": [
@@ -314,6 +317,7 @@
     "2ee827159d437c96e74dbe4386d338c1aba4791a",
     "2efd0ad67e3306c511a2a93b221310edff0853b0",
     "2f6df6964ff8755902996e67201ddd6c43277168",
+    "32245030a9b56d90e0b3b123eea7b8c2034ae33c",
     "3295c0b95e6071df9ccd04bd0a44993329dfb796",
     "3376729912eb78ea5d1c96c97f0d9a305ed1ea7b",
     "33a4d7921d5e01dd02b1aaeba627b5ca068130c5",
@@ -432,6 +436,7 @@
     "9a4b6921100e431e2b662d045acf463c75011729",
     "9c38fa9698680e3559f88f56e93cbf6caec2804b",
     "9cd35ea3d09e5698190c24e394b7252b7d1bfab4",
+    "9d77d2cad67d575751f248ab3ece334a9d6d47e4",
     "9d8fda3e83650baa3eb0aa988c4a3ce63457b8ea",
     "9e4634ee5ffe143dd1f3e6e14aeffad8107e6138",
     "9ec46ede795f2d23c37fd56d9297c4458113b19b",
@@ -515,6 +520,7 @@
     "f49508b67e916c05550cca488e3fb51807a7f289",
     "f54913cdaf83dbb2c55fd621539b0933f3aa373b",
     "f754e0ceb462d5617756aecc5bad9d9308b14c3e",
+    "f99a76c53b987d45aa120fc99f9644af6230db69",
     "fb99208c2190ef51da6de158818c6bf9740350e4"
   ],
   "papers": [
@@ -3014,7 +3020,40 @@
       "date": "2026-11-06",
       "cited_by_count": 0,
       "abstract": "ABSTRACT Background In recent educational research and practice, there has been growing attention to the use and impact of generative AI technologies, with most studies focusing on AI‐generated textual content. However, relatively little is known about AI‐generated learning videos, despite their potential to significantly influence learners' experiences and outcomes. Objectives Drawing on situatio"
+    },
+    {
+      "_fp": "f99a76c53b987d45aa120fc99f9644af6230db69",
+      "title": "The impact of an AI ‐driven multimodal teaching analytics dashboard on pre‐service teachers' reflective learning in microteaching",
+      "doi": "10.1111/bjet.70098",
+      "url": "https://doi.org/10.1111/bjet.70098",
+      "authors": "Ming Liu, Zhongming Wu, Hai Min Dai, Laiba Malik, Xiangqian Li et al.",
+      "venue": "BJET",
+      "date": "2026-11-06",
+      "cited_by_count": 0,
+      "abstract": "Abstract Microteaching is a cornerstone of teacher education, enabling pre‐service teachers (PSTs) to rehearse, observe and refine instructional practices through structured reflection. Traditional video‐based review in microteaching is often time‐consuming and insufficiently analytical. Although learning analytics dashboards (LADs) can visualize teaching data to support reflection, many remain de"
+    },
+    {
+      "_fp": "9d77d2cad67d575751f248ab3ece334a9d6d47e4",
+      "title": "Mathematics in play: exploring curriculum integration and professional growth through playing, modelling and printing games",
+      "doi": "10.1007/s11423-026-10755-3",
+      "url": "https://doi.org/10.1007/s11423-026-10755-3",
+      "authors": "Mathías Tejera, Diego Lieban, Cecília Russo, Zsolt Lavicza, Maria Alessandra Mariotti",
+      "venue": "ETR&D",
+      "date": "2026-11-07",
+      "cited_by_count": 0,
+      "abstract": "Abstract Integrating playful and maker-oriented approaches into mathematics teacher education remains challenging, particularly in relation to curricular alignment and teacher agency. This design-based research examines a workshop centred on the Hidden Blocks game, structured in three stages: play, digital modelling, and fabrication through 3D printing. The intervention was designed to support tea"
+    },
+    {
+      "_fp": "32245030a9b56d90e0b3b123eea7b8c2034ae33c",
+      "title": "Development and validation of a framework and scale for K–12 teacher–AI collaborative teaching competence",
+      "doi": "10.1007/s11423-026-10762-4",
+      "url": "https://doi.org/10.1007/s11423-026-10762-4",
+      "authors": "Hongchao Peng, Mingrui Zhang",
+      "venue": "ETR&D",
+      "date": "2026-11-07",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-11-08T06:54:50.646381+00:00"
+  "last_updated": "2026-11-09T07:36:44.851167+00:00"
 }
