@@ -73,10 +73,13 @@
     "10.1002/jcal.70362",
     "10.1002/jcal.70363",
     "10.1002/jcal.70364",
+    "10.1002/jcal.70365",
+    "10.1002/jcal.70366",
     "10.1002/jcal.70367",
     "10.1002/jcal.70368",
     "10.1002/jcal.70369",
     "10.1002/jcal.70371",
+    "10.1002/jcal.70372",
     "10.1002/jcal.70374",
     "10.1007/s11423-025-10549-z",
     "10.1007/s11423-026-10603-4",
@@ -351,6 +354,7 @@
     "4d29fac159ca233b7854dae2a5a35dd26ad6eacf",
     "4d43bda665c0eebaecb16b39080481df7c74d0a9",
     "4e176fe13dca3b83bc46b5394373322488c485ed",
+    "4f382224b60fa4867d3ce9d2aa7a5b71028b8fcc",
     "5023a95b6676d46ffb3279dbd31e120d46a35d5d",
     "50e122b7273e5c2eb815d425fbb7a42155f55f46",
     "50fb28bc30a0ce3542647a83a6a48cfa5cc95461",
@@ -410,6 +414,7 @@
     "7f42b59b5250cc69bf2a9e0ae0a55db1ba536082",
     "7ff3b2f42bdc8060aa2c3f49efd1a3eaa03d0f2c",
     "81e24a689c32ef90cee9763ae70a82450ad8f09b",
+    "84235fdda060204270fdcdf6692fac5dd5dba354",
     "86d8289940a70915b3bfeb2e4891e876aed6e6fd",
     "86ebe69c1bcd8e11c0897c4f5b007cd8c99cc684",
     "8762231c31e524875093b3cabc8ca18fa2bc183b",
@@ -514,6 +519,7 @@
     "eba6729bcd127b1f2828d9517a683c8e2f3a1241",
     "ec41d4fc8f28040bdde5670402ed6b7da4b78cb0",
     "edb76e16463a0021d5a197bc6a71836248318e2f",
+    "ef0b30c262d4465706e44f2eb9d008a3d4afab3c",
     "f24b09ce197f0e25872e97fae6a6444d8a4d8874",
     "f35940acd2049841d7062ab2d3b2601e26e3625b",
     "f39d8c80ebc24cdf8b195d199c72c6ae2b945841",
@@ -3053,7 +3059,40 @@
       "date": "2026-11-07",
       "cited_by_count": 0,
       "abstract": ""
+    },
+    {
+      "_fp": "ef0b30c262d4465706e44f2eb9d008a3d4afab3c",
+      "title": "Student Responses to Cognitive Conflicts in GenAI ‐Assisted Learning: A Covariate‐Dependent Markov Chain Analysis on Human‐ AI Interactions",
+      "doi": "10.1002/jcal.70366",
+      "url": "https://doi.org/10.1002/jcal.70366",
+      "authors": "Yiming Taclis Luo, Ting Liu, Patrick Cheong‐Iao Pang, Xiao Hu",
+      "venue": "JCAL",
+      "date": "2026-11-06",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background As generative artificial intelligence (GenAI) reshapes the learning process, students will inevitably experience cognitive conflicts when their existing knowledge and beliefs clash with information provided by GenAI. Improper handling of cognitive conflicts may lead to a decline in students' learning efficiency and even hinder the development of critical thinking skills. Object"
+    },
+    {
+      "_fp": "84235fdda060204270fdcdf6692fac5dd5dba354",
+      "title": "Research Trends of Artificial Intelligence‐Facilitated Computational Thinking in K‐12 STEM : A Systematic Review Through the Lens of Activity Theory",
+      "doi": "10.1002/jcal.70365",
+      "url": "https://doi.org/10.1002/jcal.70365",
+      "authors": "Gang Yang, Huilin Zhang, Gwo‐Jen Hwang, Yun‐Fang Tu, Junjie Yan et al.",
+      "venue": "JCAL",
+      "date": "2026-11-08",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background With the rapid advancement of artificial intelligence (AI), research in the cross‐disciplinary field of science, technology, engineering, and mathematics (STEM) education has increasingly focused on how to leverage AI to foster computational thinking (CT) among K‐12 students, given that CT, recognized as a core 21st‐century competency, plays a pivotal role in cultivating studen"
+    },
+    {
+      "_fp": "4f382224b60fa4867d3ce9d2aa7a5b71028b8fcc",
+      "title": "Enhancing Learning Performance in Primary School Students Through Real‐Time Versus Delayed Rewards During Pair Inquiry‐Based Visual Programming",
+      "doi": "10.1002/jcal.70372",
+      "url": "https://doi.org/10.1002/jcal.70372",
+      "authors": "Kaili Lu, Hao Zhang, Feng Pang, 陈晓芳, Rustam Shadiev",
+      "venue": "JCAL",
+      "date": "2026-11-08",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background Visual programming has experienced a remarkable surge in popularity recently. Real‐time and delayed rewards are two important incentive mechanisms in designing effective learning activities. However, the examination of their effects on students' learning performance remains limited. Additionally, the comparative analysis of these reward mechanisms in the context of learning vis"
     }
   ],
-  "last_updated": "2026-11-09T07:36:44.851167+00:00"
+  "last_updated": "2026-11-10T07:59:12.745576+00:00"
 }
