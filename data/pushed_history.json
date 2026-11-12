@@ -81,6 +81,8 @@
     "10.1002/jcal.70371",
     "10.1002/jcal.70372",
     "10.1002/jcal.70374",
+    "10.1002/jcal.70375",
+    "10.1002/jcal.70376",
     "10.1007/s11423-025-10549-z",
     "10.1007/s11423-026-10603-4",
     "10.1007/s11423-026-10635-w",
@@ -191,6 +193,7 @@
     "10.1016/j.compedu.2026.105771",
     "10.1016/j.compedu.2026.105773",
     "10.1016/j.compedu.2026.105790",
+    "10.1016/j.compedu.2026.105792",
     "10.1016/j.iheduc.2025.101058",
     "10.1016/j.iheduc.2026.101077",
     "10.1016/j.iheduc.2026.101088",
@@ -232,6 +235,7 @@
     "10.1016/j.learninstruc.2026.102496",
     "10.1016/j.learninstruc.2026.102497",
     "10.1016/j.learninstruc.2026.102499",
+    "10.1016/j.learninstruc.2026.102500",
     "10.1016/j.learninstruc.2026.102501",
     "10.1016/j.learninstruc.2026.102502",
     "10.1016/j.learninstruc.2026.102503",
@@ -267,6 +271,7 @@
   "title_hashes": [
     "002b7da242e78733825663452e64b6868bb472e8",
     "02863cb891527f8dffdfd5244846d5313a48915e",
+    "02c6760f898ef2bed6111cd52ae81da6a945452c",
     "0400e576b740eebcb323832cbe452bfbec841167",
     "0414fcdc58c2ca38f4c0f00a6e567af4cc68c967",
     "0495ba3167b3bfea6408eeaaa3b357c62d6ea40f",
@@ -324,6 +329,7 @@
     "3295c0b95e6071df9ccd04bd0a44993329dfb796",
     "3376729912eb78ea5d1c96c97f0d9a305ed1ea7b",
     "33a4d7921d5e01dd02b1aaeba627b5ca068130c5",
+    "340b697a60ec815105ddc79eb59276cab87fe824",
     "341463414d793555ce59b880b1c701e80f5003ca",
     "344acfcf75e3ad5ebf7089d71ab5c33f8530e3c8",
     "347fb60c28f5d77599226c2bba8a2b1a18c7a0ac",
@@ -369,6 +375,7 @@
     "58881bd1e08893ae4939547f6d0570d89ae2f6dc",
     "59c419670115f3bef6bbc26ac1f96aefb44f2f5f",
     "5a638e8e07495b1d0ca4a10131a25448b7201178",
+    "5b117a9bf88935b3ece4334bb691f41d78e3a902",
     "5dbe3b387164d911d28edd934d4701bcce85424c",
     "5e083eb7babc3244e5f418980441137bb91ce22f",
     "5e3bdda7197e535991880be27f22c663a551bab6",
@@ -474,6 +481,7 @@
     "b4d792b0c56850d7f5557287c1cc61640581bd24",
     "b55da4c633833ae9c097a50dcc69b47c55bd829d",
     "b8a4830b9cae4f27cb4955c44a7c5383df9cae2a",
+    "b9aa485afaafc76196b72c938ee8657790aa1650",
     "ba2d76f6d8e7381463184f376e924688e8a41c2d",
     "bb60830c424fca30326df63d12b6f0c00a2ebd5c",
     "bd0f53f69963127d02928bc45962ebcffb16288a",
@@ -3092,7 +3100,51 @@
       "date": "2026-11-08",
       "cited_by_count": 0,
       "abstract": "ABSTRACT Background Visual programming has experienced a remarkable surge in popularity recently. Real‐time and delayed rewards are two important incentive mechanisms in designing effective learning activities. However, the examination of their effects on students' learning performance remains limited. Additionally, the comparative analysis of these reward mechanisms in the context of learning vis"
+    },
+    {
+      "_fp": "b9aa485afaafc76196b72c938ee8657790aa1650",
+      "title": "Synergizing Mind and Machine: Unlocking the Potential of Generative AI With Metacognitive Scaffolding to Optimize Upper Elementary Student Learning",
+      "doi": "10.1016/j.compedu.2026.105792",
+      "url": "https://doi.org/10.1016/j.compedu.2026.105792",
+      "authors": "Miao YUE, Morris Siu–Yung Jong, Wenjiao Wang",
+      "venue": "C&E",
+      "date": "2026-11-01",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "340b697a60ec815105ddc79eb59276cab87fe824",
+      "title": "Examining the Effects of Motivating Language and Personalization in AI Voice‐Over Educational Videos: From a Social‐Psychological Perspective",
+      "doi": "10.1002/jcal.70375",
+      "url": "https://doi.org/10.1002/jcal.70375",
+      "authors": "Yamei Zhang, Xiaojun Sun, Qingqing Ye",
+      "venue": "JCAL",
+      "date": "2026-11-10",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background The development of AI technology is transforming the production of videos. In particular, voice‐over video lectures can be easily produced with AI voice, which has been found to generate learning comparable to that of human voice. Further, verbal cues, which are social cues—critical factors impacting video‐based learning—expressed with words, can be readily implemented with AI "
+    },
+    {
+      "_fp": "02c6760f898ef2bed6111cd52ae81da6a945452c",
+      "title": "Social Participatory Role Enactment in Asynchronous Discussion and Mobile Instant Messaging",
+      "doi": "10.1002/jcal.70376",
+      "url": "https://doi.org/10.1002/jcal.70376",
+      "authors": "Yanyan Sun, 苏加叶, Chengjun Feng",
+      "venue": "JCAL",
+      "date": "2026-11-09",
+      "cited_by_count": 0,
+      "abstract": "ABSTRACT Background Computer‐supported collaborative learning (CSCL) is widely used in higher education, yet participation remains uneven and discourse often stays at a low cognitive level. Asynchronous online discussion (AOD) and mobile instant messaging (MIM) are two common communication environments, but how social participatory roles are expressed through discourse across these environments re"
+    },
+    {
+      "_fp": "5b117a9bf88935b3ece4334bb691f41d78e3a902",
+      "title": "Both students and schools matter: A multilevel latent profile analysis of socio-emotional skills",
+      "doi": "10.1016/j.learninstruc.2026.102500",
+      "url": "https://doi.org/10.1016/j.learninstruc.2026.102500",
+      "authors": "Faming Wang, Ronnel Bornasal King",
+      "venue": "L&I",
+      "date": "2026-11-10",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-11-10T07:59:12.745576+00:00"
+  "last_updated": "2026-11-12T07:56:36.500742+00:00"
 }
