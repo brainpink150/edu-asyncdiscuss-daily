@@ -152,6 +152,7 @@
     "10.1007/s11423-026-10752-6",
     "10.1007/s11423-026-10755-3",
     "10.1007/s11423-026-10756-2",
+    "10.1007/s11423-026-10758-0",
     "10.1007/s11423-026-10759-z",
     "10.1007/s11423-026-10762-4",
     "10.1007/s11423-026-10764-2",
@@ -375,6 +376,7 @@
     "54ad348d789a5aa9dd86c3f3c6e73a0cbfa42f00",
     "54d183eb4db81e6051b0dff220e2c56279a70772",
     "55609f6dc95ba1ccd89b929fe938b3dd940e8d20",
+    "558a0b760fd7ad280e03a71c4494165bd3476631",
     "55e57824cbbf909a061e970d46c1208d890d3288",
     "56e229c085a949b564be98b3b284df6b3ca8c035",
     "5711b2c20ca694f756b093a021a9aef93f33f011",
@@ -3196,7 +3198,18 @@
       "date": "2026-11-01",
       "cited_by_count": 0,
       "abstract": "The rapid uptake of Generative Artificial Intelligence (GenAI) tools has driven significant change across the education sector. Despite this, empirical understanding of how early childhood education and care (ECEC) educators use GenAI in their professional practice remains limited. This pioneering study used the Context-Mechanism-Outcomes (CMO) schema as an organising framework to explore how Aust"
+    },
+    {
+      "_fp": "558a0b760fd7ad280e03a71c4494165bd3476631",
+      "title": "Proposing a culturally relevant theoretical framework for teacher educators’ information and communication technology (ICT) acceptance and use in Bhutan and similar cultural contexts",
+      "doi": "10.1007/s11423-026-10758-0",
+      "url": "https://doi.org/10.1007/s11423-026-10758-0",
+      "authors": "Tshering, Joshua Matthews, R. M. ADLINGTON",
+      "venue": "ETR&D",
+      "date": "2026-11-12",
+      "cited_by_count": 0,
+      "abstract": "Abstract Technology acceptance by teacher educators is crucial for successful integration into teaching. While technology acceptance models are well established in developed-country contexts, comparatively little attention has been given to developing models that account for the specific conditions of developing countries and distinct cultural contexts. A convergent mixed-methods approach was empl"
     }
   ],
-  "last_updated": "2026-11-13T07:35:04.699789+00:00"
+  "last_updated": "2026-11-14T07:19:33.593460+00:00"
 }
