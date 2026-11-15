@@ -150,11 +150,13 @@
     "10.1007/s11423-026-10748-2",
     "10.1007/s11423-026-10751-7",
     "10.1007/s11423-026-10752-6",
+    "10.1007/s11423-026-10753-5",
     "10.1007/s11423-026-10755-3",
     "10.1007/s11423-026-10756-2",
     "10.1007/s11423-026-10758-0",
     "10.1007/s11423-026-10759-z",
     "10.1007/s11423-026-10762-4",
+    "10.1007/s11423-026-10763-3",
     "10.1007/s11423-026-10764-2",
     "10.1016/j.compedu.2025.105472",
     "10.1016/j.compedu.2025.105485",
@@ -199,6 +201,7 @@
     "10.1016/j.compedu.2026.105790",
     "10.1016/j.compedu.2026.105791",
     "10.1016/j.compedu.2026.105792",
+    "10.1016/j.compedu.2026.105803",
     "10.1016/j.iheduc.2025.101058",
     "10.1016/j.iheduc.2026.101077",
     "10.1016/j.iheduc.2026.101088",
@@ -313,6 +316,7 @@
     "1fef4f1a5044e2454aaad11b0a141a718f09d63c",
     "2027d4c89564386bdc5075a94fafdeaefe481fc1",
     "20c2f567a81fd79fe9b2f7c03674413b71c9af0e",
+    "212cd4b01bbf7f5098dcb059ca40df2161b76e2b",
     "225f326850dade5ba02ddb75e9921a1b89c6f04e",
     "227f80e5494363165c2cd2f11774bd7570847738",
     "2373af69a7041be0f570750642ee2f27fb360415",
@@ -468,6 +472,7 @@
     "a2a530cf23a2b398252f46d2ff9d09d79f8d4ee4",
     "a31b87c0bd55276c16c22db235b5c73a507f91e3",
     "a44a03ba72fa70beb44452804272acc735d1e53c",
+    "a5a548594259de660e951db1276ee06466c71823",
     "a6ac63e6f01a1735c1f86e945585940f0e983e15",
     "a88954c360346d69e1a8386d1876835b6a6fa199",
     "a8d7b36df59330bc4030fb42f6a33f742ba2174d",
@@ -492,6 +497,7 @@
     "b9aa485afaafc76196b72c938ee8657790aa1650",
     "ba2d76f6d8e7381463184f376e924688e8a41c2d",
     "bb60830c424fca30326df63d12b6f0c00a2ebd5c",
+    "bc08165626bd1a765412f3fd328cb059c76243b8",
     "bd0f53f69963127d02928bc45962ebcffb16288a",
     "bddc42d7897e516e1d0e7e453b9bf6ddab5c9050",
     "befd275eda5d63879bc2d9f5a628be66175e6b87",
@@ -3209,7 +3215,40 @@
       "date": "2026-11-12",
       "cited_by_count": 0,
       "abstract": "Abstract Technology acceptance by teacher educators is crucial for successful integration into teaching. While technology acceptance models are well established in developed-country contexts, comparatively little attention has been given to developing models that account for the specific conditions of developing countries and distinct cultural contexts. A convergent mixed-methods approach was empl"
+    },
+    {
+      "_fp": "212cd4b01bbf7f5098dcb059ca40df2161b76e2b",
+      "title": "Assessing Engagement in Academic Contexts: A Multitrait, Multimethod, Multimodal Data Approach",
+      "doi": "10.1016/j.compedu.2026.105803",
+      "url": "https://doi.org/10.1016/j.compedu.2026.105803",
+      "authors": "Anh Thu Le, Cheng Liu, Ying Cheng",
+      "venue": "C&E",
+      "date": "2026-11-01",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "bc08165626bd1a765412f3fd328cb059c76243b8",
+      "title": "Developing and validating the human-AI collaboration competency scale",
+      "doi": "10.1007/s11423-026-10753-5",
+      "url": "https://doi.org/10.1007/s11423-026-10753-5",
+      "authors": "Hyeeun Kim, Eun Hye Ham, Young Hoan Cho",
+      "venue": "ETR&D",
+      "date": "2026-11-13",
+      "cited_by_count": 0,
+      "abstract": "Abstract Fostering learners’ capacity to collaborate effectively with AI has become an important goal in education. This study aims to develop and validate the Human–AI Collaboration Competency (HACC) Scale, which can be used to assess students’ perceived competency in allocating roles and managing tasks, and sharing, coordinating, and integrating with AI through ongoing interaction to achieve a c"
+    },
+    {
+      "_fp": "a5a548594259de660e951db1276ee06466c71823",
+      "title": "From information delivery to cognitive co-creation: how generative AI enhances computational thinking education through student-authored visualizations",
+      "doi": "10.1007/s11423-026-10763-3",
+      "url": "https://doi.org/10.1007/s11423-026-10763-3",
+      "authors": "Jian Zhou, Zhang Wuwen, 周沫",
+      "venue": "ETR&D",
+      "date": "2026-11-13",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-11-14T07:19:33.593460+00:00"
+  "last_updated": "2026-11-15T07:30:34.213263+00:00"
 }
