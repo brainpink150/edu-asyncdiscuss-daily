@@ -274,6 +274,8 @@
     "10.1111/bjet.70095",
     "10.1111/bjet.70096",
     "10.1111/bjet.70098",
+    "10.1111/bjet.70100",
+    "10.1111/bjet.70101",
     "10.1111/jcal.70153"
   ],
   "title_hashes": [
@@ -375,6 +377,7 @@
     "5023a95b6676d46ffb3279dbd31e120d46a35d5d",
     "50e122b7273e5c2eb815d425fbb7a42155f55f46",
     "50fb28bc30a0ce3542647a83a6a48cfa5cc95461",
+    "51b8a78fd795c0785d4c4b2795697387377a871d",
     "52ec5224c1cc1eaf9ad63842b408d2aca4cbf799",
     "54110010c6499695c8990be5b44602d53ce87cb8",
     "54ad348d789a5aa9dd86c3f3c6e73a0cbfa42f00",
@@ -521,6 +524,7 @@
     "d4574b5b13894ae3baa9fc5319cdfe77dad45f70",
     "d591170273739317b2e2c68b519d4a8636d38832",
     "d5b1e5b27458da74f08427cd61fbfb3b3381b777",
+    "d801b419ad6a1d60e52d86085fde6d487ed6bc05",
     "d8cf10e96cf71d0da41f5acefbe74467d8193462",
     "d9614763fffab9fb10594155cca91ba9305ddd78",
     "dae238fe24d1c308613aab06afc972e9dc174839",
@@ -3248,7 +3252,29 @@
       "date": "2026-11-13",
       "cited_by_count": 0,
       "abstract": ""
+    },
+    {
+      "_fp": "d801b419ad6a1d60e52d86085fde6d487ed6bc05",
+      "title": "Human tutoring, generative AI tutoring and independent internet search: A randomised between‐subjects experiment on students' responses to academic challenge",
+      "doi": "10.1111/bjet.70100",
+      "url": "https://doi.org/10.1111/bjet.70100",
+      "authors": "Megan Ennion, Ros McLellan",
+      "venue": "BJET",
+      "date": "2026-11-13",
+      "cited_by_count": 0,
+      "abstract": "Abstract Generative artificial intelligence (AI) is increasingly available as a source of interactive academic support, raising questions about how it shapes learning. Research has focused on performance outcomes, with less attention to learners' behavioural and affective responses to academic challenge, even though productive engagement with challenge supports deeper learning. In this randomised "
+    },
+    {
+      "_fp": "51b8a78fd795c0785d4c4b2795697387377a871d",
+      "title": "Generative AI empowered contextual educational games as facilitators of elementary school students' computational thinking tendencies",
+      "doi": "10.1111/bjet.70101",
+      "url": "https://doi.org/10.1111/bjet.70101",
+      "authors": "Wen‐Li Zhou, Qing-Ke Fu, Jian-Wen Fang, Gwo‐Jen Hwang",
+      "venue": "BJET",
+      "date": "2026-11-13",
+      "cited_by_count": 0,
+      "abstract": "Abstract Computational thinking (CT) is a critical skill for the 21st century. To enhance students' engagement in CT‐related learning activities, educational games are considered an effective tool, especially for younger students. However, the absence of individualized feedback may limit their potential. To address this challenge, a generative artificial intelligence (GenAI)‐empowered contextual g"
     }
   ],
-  "last_updated": "2026-11-15T07:30:34.213263+00:00"
+  "last_updated": "2026-11-16T07:36:42.921428+00:00"
 }
