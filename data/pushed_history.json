@@ -213,6 +213,7 @@
     "10.1016/j.iheduc.2026.101119",
     "10.1016/j.iheduc.2026.101120",
     "10.1016/j.iheduc.2026.101121",
+    "10.1016/j.iheduc.2026.101122",
     "10.1016/j.learninstruc.2026.102373",
     "10.1016/j.learninstruc.2026.102404",
     "10.1016/j.learninstruc.2026.102421",
@@ -339,6 +340,7 @@
     "2efd0ad67e3306c511a2a93b221310edff0853b0",
     "2f6df6964ff8755902996e67201ddd6c43277168",
     "32245030a9b56d90e0b3b123eea7b8c2034ae33c",
+    "325bd5632a944004c0279f3939326d39eb6781d7",
     "3295c0b95e6071df9ccd04bd0a44993329dfb796",
     "3376729912eb78ea5d1c96c97f0d9a305ed1ea7b",
     "33a4d7921d5e01dd02b1aaeba627b5ca068130c5",
@@ -3274,7 +3276,18 @@
       "date": "2026-11-13",
       "cited_by_count": 0,
       "abstract": "Abstract Computational thinking (CT) is a critical skill for the 21st century. To enhance students' engagement in CT‐related learning activities, educational games are considered an effective tool, especially for younger students. However, the absence of individualized feedback may limit their potential. To address this challenge, a generative artificial intelligence (GenAI)‐empowered contextual g"
+    },
+    {
+      "_fp": "325bd5632a944004c0279f3939326d39eb6781d7",
+      "title": "Using multimodal learning analytics to examine the effects of AI-supported feedback on generative learning activities",
+      "doi": "10.1016/j.iheduc.2026.101122",
+      "url": "https://doi.org/10.1016/j.iheduc.2026.101122",
+      "authors": "Xianping Bai, Fan Ouyang",
+      "venue": "IHE",
+      "date": "2026-11-01",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-11-16T07:36:42.921428+00:00"
+  "last_updated": "2026-11-17T08:47:34.418688+00:00"
 }
