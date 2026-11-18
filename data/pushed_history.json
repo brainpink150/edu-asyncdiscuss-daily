@@ -201,7 +201,9 @@
     "10.1016/j.compedu.2026.105790",
     "10.1016/j.compedu.2026.105791",
     "10.1016/j.compedu.2026.105792",
+    "10.1016/j.compedu.2026.105801",
     "10.1016/j.compedu.2026.105803",
+    "10.1016/j.compedu.2026.105804",
     "10.1016/j.iheduc.2025.101058",
     "10.1016/j.iheduc.2026.101077",
     "10.1016/j.iheduc.2026.101088",
@@ -439,6 +441,7 @@
     "7ff3b2f42bdc8060aa2c3f49efd1a3eaa03d0f2c",
     "81e24a689c32ef90cee9763ae70a82450ad8f09b",
     "84235fdda060204270fdcdf6692fac5dd5dba354",
+    "8484399b6c651ce0b982490c0d81f1ac24c76ef9",
     "86d8289940a70915b3bfeb2e4891e876aed6e6fd",
     "86ebe69c1bcd8e11c0897c4f5b007cd8c99cc684",
     "8762231c31e524875093b3cabc8ca18fa2bc183b",
@@ -551,6 +554,7 @@
     "edb76e16463a0021d5a197bc6a71836248318e2f",
     "ef0b30c262d4465706e44f2eb9d008a3d4afab3c",
     "f24b09ce197f0e25872e97fae6a6444d8a4d8874",
+    "f2dcd228ad44008ddc2c8251d56f05c6c8680c32",
     "f35940acd2049841d7062ab2d3b2601e26e3625b",
     "f39d8c80ebc24cdf8b195d199c72c6ae2b945841",
     "f49508b67e916c05550cca488e3fb51807a7f289",
@@ -3287,7 +3291,29 @@
       "date": "2026-11-01",
       "cited_by_count": 0,
       "abstract": ""
+    },
+    {
+      "_fp": "f2dcd228ad44008ddc2c8251d56f05c6c8680c32",
+      "title": "Mapping the Social Ecology of Children’s Group Learning: A Systematic Review and Conceptual Framework for Robot-Supported Educational Activities",
+      "doi": "10.1016/j.compedu.2026.105801",
+      "url": "https://doi.org/10.1016/j.compedu.2026.105801",
+      "authors": "Peng Yu, Xuanyu Pan, Han Nan, Yu Qiao, Yan Gao",
+      "venue": "C&E",
+      "date": "2026-11-01",
+      "cited_by_count": 0,
+      "abstract": ""
+    },
+    {
+      "_fp": "8484399b6c651ce0b982490c0d81f1ac24c76ef9",
+      "title": "Social Media as a Tool for Governance-Related Communication: A Comparative Study of Chinese and European Public Universities in the Digital Age",
+      "doi": "10.1016/j.compedu.2026.105804",
+      "url": "https://doi.org/10.1016/j.compedu.2026.105804",
+      "authors": "Yujie Xue, Chang Zhu",
+      "venue": "C&E",
+      "date": "2026-11-01",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-11-17T08:47:34.418688+00:00"
+  "last_updated": "2026-11-18T08:11:26.501115+00:00"
 }
