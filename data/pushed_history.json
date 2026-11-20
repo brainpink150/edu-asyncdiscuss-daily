@@ -245,6 +245,7 @@
     "10.1016/j.learninstruc.2026.102494",
     "10.1016/j.learninstruc.2026.102496",
     "10.1016/j.learninstruc.2026.102497",
+    "10.1016/j.learninstruc.2026.102498",
     "10.1016/j.learninstruc.2026.102499",
     "10.1016/j.learninstruc.2026.102500",
     "10.1016/j.learninstruc.2026.102501",
@@ -466,6 +467,7 @@
     "99aa1255f90238d98be645619519f894b1368116",
     "9a2a60771cf67e1b2b80538aaf7603f3080e893a",
     "9a4b6921100e431e2b662d045acf463c75011729",
+    "9ac74cbe9c85c8b5db162086251b3fa4655f26b7",
     "9c38fa9698680e3559f88f56e93cbf6caec2804b",
     "9cd35ea3d09e5698190c24e394b7252b7d1bfab4",
     "9d77d2cad67d575751f248ab3ece334a9d6d47e4",
@@ -3313,7 +3315,18 @@
       "date": "2026-11-01",
       "cited_by_count": 0,
       "abstract": ""
+    },
+    {
+      "_fp": "9ac74cbe9c85c8b5db162086251b3fa4655f26b7",
+      "title": "From growth mindset to social-emotional skills in early and mid-adolescence: A educational-cultural examination of an integrated mind-body-behavior framework",
+      "doi": "10.1016/j.learninstruc.2026.102498",
+      "url": "https://doi.org/10.1016/j.learninstruc.2026.102498",
+      "authors": "Tong Zhou, Yi Liao, Xiaoyu Cheng, 刘丽薇, Wei Chen",
+      "venue": "L&I",
+      "date": "2026-10-20",
+      "cited_by_count": 0,
+      "abstract": "Background Social-emotional learning (SEL) is a core educational goal, yet little is known about how adolescents’ cognitive beliefs, body-related self-perceptions, and everyday health behavior jointly relate to social-emotional skills across diverse cultural contexts and school stages. Objective Based on mindset theory and self-regulation perspectives, we examined an integrated Mind-Body-Behavior "
     }
   ],
-  "last_updated": "2026-11-18T08:11:26.501115+00:00"
+  "last_updated": "2026-11-20T08:02:16.372893+00:00"
 }
