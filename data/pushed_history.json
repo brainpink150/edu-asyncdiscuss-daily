@@ -109,6 +109,7 @@
     "10.1007/s11423-026-10702-2",
     "10.1007/s11423-026-10703-1",
     "10.1007/s11423-026-10704-0",
+    "10.1007/s11423-026-10706-y",
     "10.1007/s11423-026-10707-x",
     "10.1007/s11423-026-10708-w",
     "10.1007/s11423-026-10709-9",
@@ -202,6 +203,7 @@
     "10.1016/j.compedu.2026.105791",
     "10.1016/j.compedu.2026.105792",
     "10.1016/j.compedu.2026.105801",
+    "10.1016/j.compedu.2026.105802",
     "10.1016/j.compedu.2026.105803",
     "10.1016/j.compedu.2026.105804",
     "10.1016/j.iheduc.2025.101058",
@@ -341,6 +343,7 @@
     "2e563ea75b4d3eac46cd5b2e9ec524a47a40c50d",
     "2ee827159d437c96e74dbe4386d338c1aba4791a",
     "2efd0ad67e3306c511a2a93b221310edff0853b0",
+    "2f14cc8a8b627ad1d3749abc803edc5ca33d13fd",
     "2f6df6964ff8755902996e67201ddd6c43277168",
     "32245030a9b56d90e0b3b123eea7b8c2034ae33c",
     "325bd5632a944004c0279f3939326d39eb6781d7",
@@ -460,6 +463,7 @@
     "902785c031596e1b98d15a42c562efbb3ca133d6",
     "91a8a5cf9a1e63a6dbef7644a0c0846112b7a758",
     "91b2c614baa17cbf4058644cb62234c49c3a904c",
+    "9643ae4df8e75318e1f7b317bc08ccabaaa306eb",
     "967d12f455860a820eb805fa2b81579fa256d54a",
     "9788f65e0edf9b0adc4b6aab7cf5b27b26cfb531",
     "97b94b235fb701f27861683a9ac676c83788fd46",
@@ -3326,7 +3330,29 @@
       "date": "2026-10-20",
       "cited_by_count": 0,
       "abstract": "Background Social-emotional learning (SEL) is a core educational goal, yet little is known about how adolescents’ cognitive beliefs, body-related self-perceptions, and everyday health behavior jointly relate to social-emotional skills across diverse cultural contexts and school stages. Objective Based on mindset theory and self-regulation perspectives, we examined an integrated Mind-Body-Behavior "
+    },
+    {
+      "_fp": "2f14cc8a8b627ad1d3749abc803edc5ca33d13fd",
+      "title": "Mobile computer supported collaborative learning adoption in resource-constrained nations: perspectives of undergraduates in Nigeria",
+      "doi": "10.1007/s11423-026-10706-y",
+      "url": "https://doi.org/10.1007/s11423-026-10706-y",
+      "authors": "Ugochi Ukamaka Ugwu, Natasha Anne Rappa, Kok Wai Wong",
+      "venue": "ETR&D",
+      "date": "2026-11-19",
+      "cited_by_count": 0,
+      "abstract": "Educational inequities between high-income and resource-constrained nations are often reinforced by limited access to information and communication technologies (ICT). This study examined mobile computer supported collaborative learning (mCSCL) as a feasible approach for expanding learning opportunities in settings where mobile devices are widely available. Using an open-ended online survey, parti"
+    },
+    {
+      "_fp": "9643ae4df8e75318e1f7b317bc08ccabaaa306eb",
+      "title": "Orchestrating scaffolding AI agents: How delivery order shapes learning in problem-solving tasks",
+      "doi": "10.1016/j.compedu.2026.105802",
+      "url": "https://doi.org/10.1016/j.compedu.2026.105802",
+      "authors": "Diana Kozachek, Andreas Göldi, Andreas Janson, Mahei Manhai Li, Jan Marco Leimeister",
+      "venue": "C&E",
+      "date": "2026-11-01",
+      "cited_by_count": 0,
+      "abstract": ""
     }
   ],
-  "last_updated": "2026-11-20T08:02:16.372893+00:00"
+  "last_updated": "2026-11-21T07:57:21.254462+00:00"
 }
